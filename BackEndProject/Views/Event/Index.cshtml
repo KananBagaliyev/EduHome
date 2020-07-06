@@ -72,7 +72,7 @@
                         <ul>
                             @foreach (Event eventName in Model.Event)
                             {
-                                <li><a>@eventName.Header.ToUpper() </a></li>
+                                <li><a asp-action="Detail" asp-controller="Event" asp-route-id="@eventName.Id">@eventName.Header.ToUpper() </a></li>
                             }
                         </ul>
                     </div>
@@ -90,7 +90,7 @@
                                 <div class="row">
                                     <div class="single-post mb-30">
                                         <div class="single-post-img">
-                                            <a href="blog-details.html" style="width:33% !important; margin-top:5px!important">
+                                            <a asp-action="Detail" asp-controller="Blog" asp-route-id="@blog.Id" style="width:33% !important; margin-top:5px!important">
                                                 <img src="~/img/blog/@blog.Image" alt="post">
                                                 <div class="blog-hover">
                                                     <i class="fa fa-link"></i>
@@ -98,7 +98,7 @@
                                             </a>
                                         </div>
                                         <div class="single-post-content">
-                                            <h4><a href="blog-details.html">@blog.Header</a></h4>
+                                            <h4><a asp-action="Detail" asp-controller="Blog" asp-route-id="@blog.Id">@blog.Header</a></h4>
                                             <p>By @blog.Publisher  /  @blog.Date.ToString("MMM dd, yyyy", CultureInfo.InvariantCulture)</p>
                                         </div>
                                     </div>
@@ -108,12 +108,9 @@
                     <div class="single-blog-widget">
                         <h3>tags</h3>
                         <div class="single-tag">
-                            <a href="blog-details.html" class="mr-10 mb-10">course</a>
-                            <a href="blog-details.html" class="mr-10 mb-10">education</a>
-                            <a href="blog-details.html" class="mb-10">teachers</a>
-                            <a href="blog-details.html" class="mr-10">learning</a>
-                            <a href="blog-details.html" class="mr-10">university</a>
-                            <a href="blog-details.html">events</a>
+                            <a asp-action="Index" asp-controller="Course" class="mr-10 mb-10">course</a>
+                            <a asp-action="Index" asp-controller="Event">events</a>
+                            <a asp-action="Index" asp-controller="Teacher" class="mb-10">teachers</a>
                         </div>
                     </div>
                 </div>

@@ -105,7 +105,7 @@ WriteAttributeValue("", 164, Model.Background.Image, 164, 23, false);
                     ");
             EndContext();
             BeginContext(965, 208, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8a053d87eba469d946e6ba263830aeb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d74273a7395045b286a5c24d9ce2fb2a", async() => {
                 BeginContext(994, 172, true);
                 WriteLiteral("\r\n                        <input type=\"search\" placeholder=\"Search...\" name=\"search\" />\r\n                        <button type=\"submit\">search</button>\r\n                    ");
                 EndContext();
@@ -139,12 +139,12 @@ WriteAttributeValue("", 164, Model.Background.Image, 164, 23, false);
             WriteLiteral("                <div class=\"col-md-4 col-sm-6 col-xs-12\">\r\n                    <div class=\"single-course mb-70\">\r\n                        <div class=\"course-img\">\r\n                            ");
             EndContext();
             BeginContext(1525, 356, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e254080a445d42b693a9f41dc3d08243", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93e76a5a4e624bfab638645e71783d40", async() => {
                 BeginContext(1598, 34, true);
                 WriteLiteral("\r\n                                ");
                 EndContext();
                 BeginContext(1632, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "096bdc4e9c8341deaf81f09adc97a7bf", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b2412f5f4c384e57b6db372153d02654", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -202,7 +202,7 @@ AddHtmlAttributeValue("", 1655, course.Image, 1655, 13, false);
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"course-content\">\r\n                            <h3>");
             EndContext();
             BeginContext(2001, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a41866eab06e42c6b8d9ac816c2a4752", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c45da255790e4cfe96bcf1c00e8a3867", async() => {
                 BeginContext(2075, 11, false);
 #line 51 "C:\Users\Kanan\Desktop\EduHome\BackEndProject\Views\Course\Index.cshtml"
                                                                                                     Write(course.Name);
@@ -273,7 +273,7 @@ AddHtmlAttributeValue("", 1655, course.Image, 1655, 13, false);
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(2475, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b6e16651f5049b1adaba9de93495688", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bde5723c6b2d4c8b909e9538a842412d", async() => {
                 BeginContext(2568, 9, true);
                 WriteLiteral("read more");
                 EndContext();

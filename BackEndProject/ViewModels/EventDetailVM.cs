@@ -11,5 +11,7 @@ namespace BackEndProject.ViewModels
         public Background Background { get; set; }
         public Event Event { get; set; }
         public IEnumerable<Speaker> Speakers { get; set; }
+        public IEnumerable<Blog> Blogs { get; set; }
+        public IEnumerable<Course> Courses { get; set; }
     }
 }

@@ -72,3 +72,6 @@ C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\View
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Course\Detail.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Event\Detail.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.EduHome - Web Deploy.json
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.json
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

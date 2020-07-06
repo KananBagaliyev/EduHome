@@ -13,5 +13,7 @@ namespace BackEndProject.Models
         public string Header { get; set; }
         [Required,MinLength(47),MaxLength(87)]
         public string Content { get; set; }
+        [Required]
+        public string ReferenceController { get; set; }
     }
 }

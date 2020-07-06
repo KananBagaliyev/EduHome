@@ -45,6 +45,8 @@ namespace BackEndProject.Controllers
             EventDetailVM detailVM = new EventDetailVM
             {
                 Background = _db.Backgrounds.FirstOrDefault(),
+                Blogs = _db.Blogs.OrderByDescending(p=>p.Id).Take(5),
+                Courses = _db.Courses.Take(3),
                 Event = _event,
                 Speakers = speakers
             };

@@ -38,6 +38,8 @@ namespace BackEndProject.Controllers
                 Background = _db.Backgrounds.FirstOrDefault(),
                 Course = course,
                 CourseDetails = _db.CourseDetails,
+                Teachers = _db.Teachers.Take(3),
+                Blogs = _db.Blogs.OrderByDescending(p=>p.Id).Take(5),
                 CourseFeatures = _db.CourseFeatures
             };
             return View(detailVM);

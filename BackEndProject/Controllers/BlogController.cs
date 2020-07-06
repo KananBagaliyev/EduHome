@@ -42,6 +42,8 @@ namespace BackEndProject.Controllers
             BlogDetailVM detailVM = new BlogDetailVM
             {
                 Background = _db.Backgrounds.FirstOrDefault(),
+                Courses = _db.Courses.Take(6),
+                Events = _db.Events.OrderByDescending(p=>p.Id).Take(3),
                 Blog = blog,
             };
             return View(detailVM);

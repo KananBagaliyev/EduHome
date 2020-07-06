@@ -16,7 +16,7 @@
                                 <div class="slide-content text-center">
                                     <h2>@Model.AboutSlider.Header </h2>
                                     <p>@Model.AboutSlider.Content  </p>
-                                    <a class="default-btn" href="about.html">Learn more</a>
+                                    <a class="default-btn" asp-action="Index" asp-controller="About">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
 
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="single-service">
-                        <h3><a href="teacher.html">@service.Header</a></h3>
+                        <h3><a asp-action="Index" asp-controller="@service.ReferenceController.ToLower()">@service.Header</a></h3>
                         <p>@service.Content</p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <h2>@Model.AboutUs.Header</h2>
                     <p>@Model.AboutUs.Content</p>
                     <p class="hidden-sm">@Model.AboutUs.ShortContent</p>
-                    <a class="default-btn" href="about.html">view courses</a>
+                    <a class="default-btn" asp-action="Index" asp-controller="Course">view courses</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
@@ -87,7 +87,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-course">
                         <div class="course-img">
-                            <a href="course-details.html">
+                            <a asp-action="Detail" asp-controller="Course" asp-route-id="@course.Id">
                                 <img src="img/course/@course.Image" alt="course">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
@@ -95,7 +95,7 @@
                             </a>
                         </div>
                         <div class="course-content">
-                            <h3><a href="course-details.html">@course.Name</a></h3>
+                            <h3><a asp-action="Detail" asp-controller="Course" asp-route-id="@course.Id">@course.Name</a></h3>
                             @foreach (CourseDetail detail in Model.CourseDetails)
                             {
                                 if (course.CourseDetailId == detail.Id)
@@ -104,7 +104,7 @@
                                 }
                             }
 
-                            <a class="default-btn" href="course-details.html">read more</a>
+                            <a class="default-btn" asp-action="Detail" asp-controller="Course" asp-route-id="@course.Id">read more</a>
                         </div>
                     </div>
                 </div>
@@ -165,17 +165,17 @@
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div class="single-event mb-35" style="display:flex !important;align-items:center !important;padding:0px!important">
                     <div class="event-img" style="width:50% !important">
-                        <a href="event-details.html"><img src="img/event/@_event.Image" alt="event"></a>
+                        <a asp-action="Detail" asp-controller="Event" asp-route-id="@_event.Id"><img src="img/event/@_event.Image" alt="event"></a>
                     </div>
                     <div class="event-content text-left" style="padding: 0px !important">
                         <h3>@_event.Date.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)</h3>
-                        <h4><a href="event-details.html">@_event.Header</a></h4>
+                        <h4><a asp-action="Detail" asp-controller="Event" asp-route-id="@_event.Id">@_event.Header</a></h4>
                         <ul>
                             <li><i class="fa fa-clock-o"></i>@_event.Interval</li>
                             <li><i class="fa fa-map-marker"></i>@_event.Location</li>
                         </ul>
                         <div class="event-content-right">
-                            <a class="default-btn" href="event-details.html">join now</a>
+                            <a class="default-btn" asp-action="Detail" asp-controller="Event" asp-route-id="@_event.Id">join now</a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-blog">
                         <div class="blog-img">
-                            <a href="blog-details.html"><img src="img/blog/@blog.Image" alt="blog"></a>
+                            <a asp-action="Detail" asp-controller="Blog" asp-route-id="@blog.Id"><img src="img/blog/@blog.Image" alt="blog"></a>
                             <div class="blog-hover">
                                 <a href="blog-details.html"><i class="fa fa-link"></i></a>
                             </div>
