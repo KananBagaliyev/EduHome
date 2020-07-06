@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{C4055790-4D90-44D1-9B4D-3F4C6523FCA9}|Default">
+  <MonoDevelop.Ide.ItemProperties.BackEndProject PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BackEndProject/wwwroot/js/main.js">
+    <Files>
+      <File FileName="BackEndProject/Controllers/BlogController.cs" Line="29" Column="33" />
+      <File FileName="BackEndProject/Views/Blog/Index.cshtml" Line="26" Column="47" />
+      <File FileName="BackEndProject/wwwroot/js/main.js" Line="13" Column="35" />
+      <File FileName="BackEndProject/Views/Shared/_Layout.cshtml" Line="44" Column="83" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BackEndProject" expanded="True">
+            <Node name="BackEndProject" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Blog" expanded="True" />
+                <Node name="Course" expanded="True" />
+                <Node name="Event" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="Components" expanded="True" />
+                </Node>
+                <Node name="Teacher" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="js" expanded="True">
+                  <Node name="main.js" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,6 +1,20 @@
 (function ($) {
 "use strict";  
-    
+/*------------------------------------
+	Load More
+--------------------------------------*/
+
+    var pagination = document.querySelector(".pagination");
+    pagination.cick = function () {
+        $.ajax({
+            url: "Blog/Load/skip?= " + skip;
+            type: "Get";
+            success: function (response) {
+                console.log("Hello")
+            }
+        })
+    }
+
 /*------------------------------------
 	Sticky Menu 
 --------------------------------------*/

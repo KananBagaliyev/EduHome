@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="logo">
-                            <a href="index.html"><img src="~/img/logo/@Model.Data.Logo" alt="eduhome" /></a>
+                            <a asp-action="Index" asp-controller="Home"><img src="~/img/logo/@Model.Data.Logo" alt="eduhome" /></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-6">
@@ -42,13 +42,13 @@
                                             <a asp-action="Index" asp-controller="Course">courses</a>
                                         </li>
                                         <li>
-                                            <a href="event.html">event</a>
+                                            <a asp-action="Index" asp-controller="Event">event</a>
                                         </li>
                                         <li class="hidden-sm">
-                                            <a href="teacher.html">teacher</a>
+                                            <a asp-action="Index" asp-controller="Teacher">teacher</a>
                                         </li>
                                         <li>
-                                            <a href="blog.html">blog</a>
+                                            <a asp-action="Index" asp-controller="Blog">blog</a>
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>

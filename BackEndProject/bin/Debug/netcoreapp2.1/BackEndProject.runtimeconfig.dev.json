@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Kanan\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Kanan\\.nuget\\packages"
+      "/Users/kanan/.dotnet/store/|arch|/|tfm|",
+      "/Users/kanan/.nuget/packages",
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
     ]
   }
 }

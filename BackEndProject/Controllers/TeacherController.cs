@@ -8,26 +8,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BackEndProject.Controllers
 {
-    public class EventController : Controller
+    public class TeacherController : Controller
     {
         private readonly AppDbContext _db;
-
-        public EventController(AppDbContext db)
+        public TeacherController(AppDbContext db)
         {
             _db = db;
         }
         public IActionResult Index()
         {
-
-            EventVM eventVM = new EventVM
+            TeacherVM teacherVM = new TeacherVM
             {
                 Background = _db.Backgrounds.FirstOrDefault(),
-                Event = _db.Events.OrderByDescending(p=>p.Id).Take(6),
-                Speakers = _db.Speakers,
-                EventSpeakers = _db.EventSpeakers,
-                Blogs = _db.Blogs.OrderByDescending(p=>p.Id).Take(3)
+                Teachers = _db.Teachers,
+                AboutTeachers = _db.AboutTeachers,
+                Skills = _db.Skills,
+                Hobbies = _db.Hobbies,
+                TeacherHobbies = _db.TeacherHobbies
             };
-            return View(eventVM);
+            return View(teacherVM);
         }
     }
 }

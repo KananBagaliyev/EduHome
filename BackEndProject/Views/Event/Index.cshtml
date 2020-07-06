@@ -1,0 +1,124 @@
+﻿@model EventVM
+
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center" style="background-image: url(/img/banner/@Model.Background.Image) !important">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>events</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Blog Start -->
+<div class="blog-area event-area three text-center pt-150 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    @foreach (Event _event in Model.Event)
+                    {
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="single-event mb-60">
+                                <div class="event-img">
+                                    <a href="event-details.html">
+                                        <img src="img/event/@_event.Image" alt="event">
+                                        <div class="course-hover">
+                                            <i class="fa fa-link"></i>
+                                        </div>
+                                    </a>
+                                    <div class="event-date">
+                                        <h3>@_event.Date.ToString("dd MMM", CultureInfo.InvariantCulture)</h3>
+                                    </div>
+                                </div>
+                                <div class="event-content text-left">
+                                    <h4><a href="event-details.html">@_event.Header</a></h4>
+                                    <ul>
+                                        <li><span>time:</span> @_event.Interval</li>
+                                        <li><span>venue</span> @_event.Location</li>
+                                    </ul>
+                                    <div class="event-content-right">
+                                        <a class="default-btn" href="event-details.html">join now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="blog-sidebar right text-left">
+                    <div class="single-blog-widget mb-50">
+                        <h3>search</h3>
+                        <div class="blog-search">
+                            <form id="search" action="#">
+                                <input type="search" placeholder="Search..." name="search" />
+                                <button type="submit">
+                                    <span><i class="fa fa-search"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="single-blog-widget mb-50">
+                        <h3>Events</h3>
+                        <ul>
+                            @foreach (Event eventName in Model.Event)
+                            {
+                                <li><a>@eventName.Header.ToUpper() </a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="single-blog-widget mb-50">
+                        <div class="single-blog-banner">
+                            <a href="blog-details.html" id="blog"><img src="img/blog/blog-img.jpg" alt="blog"></a>
+                            <h2>best<br> eductaion<br> theme</h2>
+                        </div>
+                    </div>
+                    <div class="single-blog-widget mb-50">
+                        <h3>latest blogs</h3>
+                        @foreach (Blog blog in Model.Blogs)
+                        {
+
+                                <div class="row">
+                                    <div class="single-post mb-30">
+                                        <div class="single-post-img">
+                                            <a href="blog-details.html" style="width:33% !important; margin-top:5px!important">
+                                                <img src="~/img/blog/@blog.Image" alt="post">
+                                                <div class="blog-hover">
+                                                    <i class="fa fa-link"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="single-post-content">
+                                            <h4><a href="blog-details.html">@blog.Header</a></h4>
+                                            <p>By @blog.Publisher  /  @blog.Date.ToString("MMM dd, yyyy", CultureInfo.InvariantCulture)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        }
+                    </div>
+                    <div class="single-blog-widget">
+                        <h3>tags</h3>
+                        <div class="single-tag">
+                            <a href="blog-details.html" class="mr-10 mb-10">course</a>
+                            <a href="blog-details.html" class="mr-10 mb-10">education</a>
+                            <a href="blog-details.html" class="mb-10">teachers</a>
+                            <a href="blog-details.html" class="mr-10">learning</a>
+                            <a href="blog-details.html" class="mr-10">university</a>
+                            <a href="blog-details.html">events</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
