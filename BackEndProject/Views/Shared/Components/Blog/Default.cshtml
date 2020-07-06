@@ -1,0 +1,25 @@
+﻿@model BlogVM
+
+@foreach (Blog blog in Model.Blogs)
+{
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="single-blog mb-60">
+            <div class="blog-img">
+                <a asp-action="Detail" asp-controller="Blog" asp-route-id="@blog.Id"><img src="~/img/blog/@blog.Image" alt="blog"></a>
+                <div class="blog-hover">
+                    <i class="fa fa-link"></i>
+                </div>
+            </div>
+            <div class="blog-content">
+                <div class="blog-top">
+                    <p>By @blog.Publisher  / @blog.Date.ToString("MMM dd, yyyy", CultureInfo.InvariantCulture)  /  <i class="fa fa-comments-o"></i> 4</p>
+                </div>
+                <div class="blog-bottom">
+                    <h2><a asp-action="Detail" asp-controller="Blog" asp-route-id="@blog.Id">@blog.Header </a></h2>
+                    <a asp-action="Detail" asp-controller="Blog" asp-route-id="@blog.Id">read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

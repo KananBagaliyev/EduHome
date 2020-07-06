@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>50c70882-1420-47eb-96a6-1bbef6139006</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,11 +45,5 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Event\" />
-    <Folder Include="Views\Teacher\" />
-    <Folder Include="Views\Blog\" />
   </ItemGroup>
 </Project>

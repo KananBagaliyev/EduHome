@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kanan/Desktop/EduHome/BackEndProject/BackEndProject.csproj": {}
+    "C:\\Users\\Kanan\\Desktop\\EduHome\\BackEndProject\\BackEndProject.csproj": {}
   },
   "projects": {
-    "/Users/kanan/Desktop/EduHome/BackEndProject/BackEndProject.csproj": {
+    "C:\\Users\\Kanan\\Desktop\\EduHome\\BackEndProject\\BackEndProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kanan/Desktop/EduHome/BackEndProject/BackEndProject.csproj",
+        "projectUniqueName": "C:\\Users\\Kanan\\Desktop\\EduHome\\BackEndProject\\BackEndProject.csproj",
         "projectName": "BackEndProject",
-        "projectPath": "/Users/kanan/Desktop/EduHome/BackEndProject/BackEndProject.csproj",
-        "packagesPath": "/Users/kanan/.nuget/packages/",
-        "outputPath": "/Users/kanan/Desktop/EduHome/BackEndProject/obj/",
+        "projectPath": "C:\\Users\\Kanan\\Desktop\\EduHome\\BackEndProject\\BackEndProject.csproj",
+        "packagesPath": "C:\\Users\\Kanan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kanan\\Desktop\\EduHome\\BackEndProject\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/kanan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Kanan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +70,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
