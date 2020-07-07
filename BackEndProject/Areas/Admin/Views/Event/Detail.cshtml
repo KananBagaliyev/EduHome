@@ -1,0 +1,46 @@
+﻿@model EventDetailVM
+<!-- Event Details Start -->
+<div class="event-details-area blog-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="event-details">
+                    <div class="event-details-img">
+                        <img src="~/img/event/@Model.Event.Image" alt="event-details">
+                        <div class="event-date">
+                            <h3>Date: @Model.Event.Date.ToString("dd MMM, yyyy", CultureInfo.InvariantCulture)</h3>
+                        </div>
+                    </div>
+                    <div class="event-details-content">
+                        <h2>@Model.Event.Header</h2>
+                        <ul>
+                            <li><span>Time Interval : </span>@Model.Event.Interval</li>
+                            <li><span>Location : </span>@Model.Event.Location</li>
+                        </ul>
+                        <p>@Model.Event.Content</p>
+                        <div class="speakers-area fix">
+                            <h4>Speakers</h4>
+                            <div class="row">
+
+                                @foreach (Speaker speaker in Model.Speakers)
+                                {
+
+                                    <div class="single-speaker" style="margin-left:30px">
+                                        <div class="speaker-img">
+                                            <img src="~/img/event/@speaker.Image" alt="speaker">
+                                        </div>
+                                        <div class="speaker-name">
+                                            <h5>@speaker.Name</h5>
+                                            <p>@speaker.Speciality </p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Event Details End -->

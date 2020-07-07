@@ -207,7 +207,8 @@ namespace BackEndProject.Migrations
                         .IsRequired();
 
                     b.Property<string>("Content")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(144);
 
                     b.Property<string>("HowToApply")
                         .IsRequired();
@@ -224,7 +225,8 @@ namespace BackEndProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Assesments")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(17);
 
                     b.Property<decimal>("ClassDuration");
 
@@ -233,10 +235,12 @@ namespace BackEndProject.Migrations
                     b.Property<decimal>("Fee");
 
                     b.Property<string>("Language")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(17);
 
                     b.Property<string>("SkillLevel")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(17);
 
                     b.Property<DateTime>("StartingDate");
 

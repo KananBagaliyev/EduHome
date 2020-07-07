@@ -9,7 +9,7 @@ namespace BackEndProject.Models
     public class CourseDetail
     {
         public int Id { get; set; }
-        [Required,MinLength(50)]
+        [Required,MinLength(95),MaxLength(144)]
         public string Content { get; set; }
         [Required,MinLength(200)]
         public string AboutCourse { get; set; }

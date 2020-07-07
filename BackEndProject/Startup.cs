@@ -57,6 +57,11 @@ namespace BackEndProject
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(name: "areas",template: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+            });
+
+            app.UseMvc(routes =>
+            {
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{ID?}");
             });
         }

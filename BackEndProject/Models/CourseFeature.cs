@@ -15,13 +15,13 @@ namespace BackEndProject.Models
         public decimal Duration { get; set; }
         [Required]
         public decimal ClassDuration { get; set; }
-        [Required, MinLength(17)]
+        [Required, MaxLength(17)]
         public string SkillLevel { get; set; }
-        [Required, MinLength(17)]
+        [Required, MaxLength(17)]
         public string Language { get; set; }
         [Required]
         public int Students { get; set; }
-        [Required, MinLength(17)]
+        [Required, MaxLength(17)]
         public string Assesments  { get; set; }
         [Required]
         public decimal Fee { get; set; }

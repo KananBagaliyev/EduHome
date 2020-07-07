@@ -22,7 +22,7 @@ namespace BackEndProject.Controllers
             CourseVM courseVM = new CourseVM
             {
                 Background = _db.Backgrounds.FirstOrDefault(),
-                Course = _db.Courses.Take(9),
+                Course = _db.Courses.OrderByDescending(p=>p.Id).Take(9),
                 CourseDetails = _db.CourseDetails,
                 CourseFeatures = _db.CourseFeatures
 

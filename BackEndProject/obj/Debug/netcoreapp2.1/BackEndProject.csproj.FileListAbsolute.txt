@@ -75,3 +75,18 @@ C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\View
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.EduHome - Web Deploy.json
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\bin\Debug\netcoreapp2.1\Properties\serviceDependencies.json
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\About\Content.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Course\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Event\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Teacher\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Blog\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Course\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Event\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Blog\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Course\Create.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_Validation.cshtml.g.cs
