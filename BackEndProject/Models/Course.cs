@@ -20,6 +20,7 @@ namespace BackEndProject.Models
         public int CourseFeatureId { get; set; }
         public virtual CourseFeature CourseFeature { get; set; }
         [NotMapped]
+        [Required]
         public IFormFile Photo { get; set; }
     }
 }

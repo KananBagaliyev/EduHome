@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,5 +22,8 @@ namespace BackEndProject.Models
         public virtual ICollection<TeacherHobby> TeacherHobbies { get; set; }
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
+        [NotMapped]
+        [Required]
+        public IFormFile Photo { get; set; }
     }
 }

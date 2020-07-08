@@ -90,3 +90,7 @@ C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Area
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Blog\Detail.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Course\Create.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_Validation.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Course\Delete.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Event\Create.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_SpeakerNumberPartial.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Teacher\Create.cshtml.g.cs

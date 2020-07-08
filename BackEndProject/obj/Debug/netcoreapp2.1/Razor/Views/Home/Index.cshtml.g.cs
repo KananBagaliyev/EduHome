@@ -117,7 +117,7 @@ WriteAttributeValue("", 333, slider.Image, 333, 13, false);
             WriteLiteral("  </p>\r\n                                    ");
             EndContext();
             BeginContext(906, 79, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2faeddf8c360485f99c0eeff7fcc06fd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e966fb1226cb4070bbf24c1f66018dc7", async() => {
                 BeginContext(971, 10, true);
                 WriteLiteral("Learn more");
                 EndContext();
@@ -160,7 +160,7 @@ WriteAttributeValue("", 333, slider.Image, 333, 13, false);
             WriteLiteral("                <div class=\"col-md-4 col-sm-4 col-xs-12\">\r\n                    <div class=\"single-service\">\r\n                        <h3>");
             EndContext();
             BeginContext(1659, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "caaa6a631c214b79aba38a3e16b5196b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fcf5247ef68142d0944c71787d3f88b8", async() => {
                 BeginContext(1738, 14, false);
 #line 42 "C:\Users\Kanan\Desktop\EduHome\BackEndProject\Views\Home\Index.cshtml"
                                                                                                      Write(service.Header);
@@ -253,7 +253,7 @@ WriteAttributeValue("", 333, slider.Image, 333, 13, false);
             WriteLiteral("</p>\r\n                    ");
             EndContext();
             BeginContext(2335, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51e3b03b63824cb2a15b3d29679ff586", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e695b96bdf8b40a6bd6367de3d16a527", async() => {
                 BeginContext(2401, 12, true);
                 WriteLiteral("view courses");
                 EndContext();
@@ -278,7 +278,7 @@ WriteAttributeValue("", 333, slider.Image, 333, 13, false);
             WriteLiteral("\r\n                </div>\r\n            </div>\r\n            <div class=\"col-md-6 col-sm-6\">\r\n                <div class=\"about-img\">\r\n                    ");
             EndContext();
             BeginContext(2569, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e82dd034dac546129bcfe1457b9d4603", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "63919054e279492691109a50ec7290c8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -333,7 +333,7 @@ AddHtmlAttributeValue("", 2591, Model.AboutUs.Image, 2591, 20, false);
             WriteLiteral("                <div class=\"col-md-4 col-sm-6 col-xs-12\">\r\n                    <div class=\"single-course\">\r\n                        <div class=\"course-img\">\r\n                            ");
             EndContext();
             BeginContext(3419, 354, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d4cfbbc7c164aaab3c87e4dcf096ebd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b969190fb1164ddd90edd3b7da4ba7fd", async() => {
                 BeginContext(3492, 38, true);
                 WriteLiteral("\r\n                                <img");
                 EndContext();
@@ -381,7 +381,7 @@ WriteAttributeValue("", 3547, course.Image, 3547, 13, false);
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"course-content\">\r\n                            <h3>");
             EndContext();
             BeginContext(3893, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afb9a6fd22814ed098cb47f81c8d1c61", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3d9db4fe66a4cf38ac363d283ee8361", async() => {
                 BeginContext(3967, 11, false);
 #line 98 "C:\Users\Kanan\Desktop\EduHome\BackEndProject\Views\Home\Index.cshtml"
                                                                                                     Write(course.Name);
@@ -452,7 +452,7 @@ WriteAttributeValue("", 3547, course.Image, 3547, 13, false);
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(4367, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b78264f7edfc4b74a2f45c843a48b6a0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7a29911ab4d42249193c1c59b8cfade", async() => {
                 BeginContext(4460, 9, true);
                 WriteLiteral("read more");
                 EndContext();
@@ -611,7 +611,7 @@ WriteAttributeValue("", 5168, Model.NoticeVideo.Link, 5168, 23, false);
                         ");
             EndContext();
             BeginContext(6918, 123, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50659c41a9974526b943e664a30fb218", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "165f735de44e42eaa7a4477ea97e6dd7", async() => {
                 BeginContext(6990, 4, true);
                 WriteLiteral("<img");
                 EndContext();
@@ -669,7 +669,7 @@ WriteAttributeValue("", 7010, _event.Image, 7010, 13, false);
             WriteLiteral("</h3>\r\n                        <h4>");
             EndContext();
             BeginContext(7291, 90, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69a584e5039c40bcbd010bb7e15f40b8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "523256a2f479448d89fc1e6b6d496e2a", async() => {
                 BeginContext(7364, 13, false);
 #line 172 "C:\Users\Kanan\Desktop\EduHome\BackEndProject\Views\Home\Index.cshtml"
                                                                                                Write(_event.Header);
@@ -730,7 +730,7 @@ WriteAttributeValue("", 7010, _event.Image, 7010, 13, false);
             WriteLiteral("</li>\r\n                        </ul>\r\n                        <div class=\"event-content-right\">\r\n                            ");
             EndContext();
             BeginContext(7707, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d34a97f36aec4748bdd162787eef2a91", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81a4330146ec4a13acb1c953537198d2", async() => {
                 BeginContext(7799, 8, true);
                 WriteLiteral("join now");
                 EndContext();
@@ -873,7 +873,7 @@ WriteAttributeValue("", 8612, testimonial.Image, 8612, 18, false);
             WriteLiteral("                <div class=\"col-md-4 col-sm-6 col-xs-12\">\r\n                    <div class=\"single-blog\">\r\n                        <div class=\"blog-img\">\r\n                            ");
             EndContext();
             BeginContext(9873, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e75c42b689248d39272a8e44e6224f1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b48229c439e64e749ad6e08c8e1d4d4a", async() => {
                 BeginContext(9942, 4, true);
                 WriteLiteral("<img");
                 EndContext();

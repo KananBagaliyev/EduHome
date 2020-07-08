@@ -63,4 +63,20 @@
     });
 
   });
+    //$("#number_of_speakers").on("keyup", function () {
+    //    $("#speaker_number").empty()
+    //    var key = $("#number_of_speakers").val();
+    //    $.ajax({
+    //        url: "/Admin/Event/SpeakerNumber?key=" + key,
+    //        type: "Get",
+    //        success: function (response) {
+    //            console.log(response)
+    //            for (let i = 0; i < key; ++i)
+    //            {
+
+    //                $("#speaker_number").append(response)
+    //            }
+    //        }
+    //    })
+    //})
 })(jQuery);

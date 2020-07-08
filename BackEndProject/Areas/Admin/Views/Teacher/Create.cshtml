@@ -1,0 +1,220 @@
+﻿@model BackEndProject.Areas.Admin.ViewModels.TeacherVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Event</h4>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Teacher.Name"></label>
+                                <input asp-for="@Model.Teacher.Name" class="form-control" placeholder="Name">
+                                <span asp-validation-for="@Model.Teacher.Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Teacher.Photo"></label>
+                                <input asp-for="@Model.Teacher.Photo" class="form-control" placeholder="Photo">
+                                <span asp-validation-for="@Model.Teacher.Photo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <h4>Basic Informations</h4>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Speciality"></label>
+                                <input asp-for="@Model.AboutTeacher.Speciality" class="form-control" placeholder="Degree">
+                                <span asp-validation-for="@Model.AboutTeacher.Speciality" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Degree"></label>
+                                <input asp-for="@Model.AboutTeacher.Degree" class="form-control" placeholder="Degree">
+                                <span asp-validation-for="@Model.AboutTeacher.Degree" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Experience"></label>
+                                <input asp-for="@Model.AboutTeacher.Experience" class="form-control" placeholder="Experience">
+                                <span asp-validation-for="@Model.AboutTeacher.Experience" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Phone"></label>
+                                <input asp-for="@Model.AboutTeacher.Phone" class="form-control" placeholder="Phone">
+                                <span asp-validation-for="@Model.AboutTeacher.Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Social Media Accounts</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Mail"></label>
+                                <input asp-for="@Model.AboutTeacher.Mail" class="form-control" placeholder="Mail">
+                                <span asp-validation-for="@Model.AboutTeacher.Mail" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Skype"></label>
+                                <input asp-for="@Model.AboutTeacher.Skype" class="form-control" placeholder="Mail">
+                                <span asp-validation-for="@Model.AboutTeacher.Skype" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Facebook"></label>
+                                <input asp-for="@Model.AboutTeacher.Facebook" class="form-control" placeholder="Facebook">
+                                <span asp-validation-for="@Model.AboutTeacher.Facebook" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Pinterest"></label>
+                                <input asp-for="@Model.AboutTeacher.Pinterest" class="form-control" placeholder="Pinterest">
+                                <span asp-validation-for="@Model.AboutTeacher.Pinterest" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Vimeo"></label>
+                                <input asp-for="@Model.AboutTeacher.Vimeo" class="form-control" placeholder="Vimeo">
+                                <span asp-validation-for="@Model.AboutTeacher.Vimeo" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.AboutTeacher.Twitter"></label>
+                                <input asp-for="@Model.AboutTeacher.Twitter" class="form-control" placeholder="Twitter">
+                                <span asp-validation-for="@Model.AboutTeacher.Twitter" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h4>Skills</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.Skill.Language"></label>
+                                <input asp-for="@Model.Skill.Language" class="form-control" placeholder="Language">
+                                <span asp-validation-for="@Model.Skill.Language" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.Skill.TeamLeader"></label>
+                                <input asp-for="@Model.Skill.TeamLeader" class="form-control" placeholder="TeamLeader">
+                                <span asp-validation-for="@Model.Skill.TeamLeader" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.Skill.Development"></label>
+                                <input asp-for="@Model.Skill.Development" class="form-control" placeholder="Development">
+                                <span asp-validation-for="@Model.Skill.Development" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.Skill.Design"></label>
+                                <input asp-for="@Model.Skill.Design" class="form-control" placeholder="Design">
+                                <span asp-validation-for="@Model.Skill.Design" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.Skill.Innovation"></label>
+                                <input asp-for="@Model.Skill.Innovation" class="form-control" placeholder="Innovation">
+                                <span asp-validation-for="@Model.Skill.Innovation" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label asp-for="@Model.Skill.Communication"></label>
+                                <input asp-for="@Model.Skill.Communication" class="form-control" placeholder="Communication">
+                                <span asp-validation-for="@Model.Skill.Communication" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h5>Choose Department</h5>
+                    <select id="department" name="department">
+                        @foreach (var item in Model.Departments)
+                        {
+
+                            <option value="@item.Id">@item.Abbreviation / @item.Name</option>
+                        }
+                    </select>
+                    <h5 class="mt-5">Choose Hobbies</h5>
+                    <select name="hobbies" id="hobbies" multiple>
+                        @foreach (var item in Model.Hobbies)
+                        {
+                            <option value=" @item.Id">@item.Name</option>
+
+                        }
+                    </select>
+
+
+                    <div class="form-group">
+                        <label asp-for="@Model.AboutTeacher.About"></label>
+                        <textarea asp-for="@Model.AboutTeacher.About" id="editor"></textarea>
+                        <span asp-validation-for="@Model.AboutTeacher.About" class="text-danger"></span>
+                    </div>
+                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{>
+    <partial name="_Validation" />;
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" language="javascript" type="text/javascript"><</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+    </script>
+
+    <script src="~/admin/js/dist/multi.min.js"></script>
+    <script>
+        $('#hobbies').multi({
+            non_selected_header: 'Hobbies',
+            selected_header: 'Selected Hobbies'
+        });
+        $('#hobbies').multi({
+
+            // enable search
+            enable_search: true,
+
+            // placeholder of search input
+            search_placeholder: 'Search...'
+
+        });
+    </script>
+
+}
+
+
+
+

@@ -38,7 +38,7 @@
                                     <td>
                                         <a asp-action="Detail" asp-route-id="@course.Id" asp-controller="Course" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
                                         <a @*asp-action="Edit" asp-route-id="@course.Id"*@ class="btn btn-warning"><i class="mdi mdi-table-edit "></i></a>
-                                        <a @*asp-action="Delete" asp-route-id="@course.Id"*@ class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                                        <a asp-action="Delete" asp-route-id="@course.Id" asp-controller="Course" asp-area="Admin" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
                                     </td>
                                 </tr>
                                 }

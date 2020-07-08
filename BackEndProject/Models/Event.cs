@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,5 +27,8 @@ namespace BackEndProject.Models
         [Required, MinLength(150)]
         public string Content { get; set; }
         public virtual ICollection<EventSpeaker> EventSpeakers { get; set; }
+        [NotMapped]
+        [Required]
+        public IFormFile Photo { get; set; }
     }
 }
