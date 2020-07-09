@@ -1,0 +1,41 @@
+﻿@model NoticeVideo
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Slider</h4>
+                <img src="~/img/notice/@Model.Image" style="width:50%" alt="Alternate Text" />
+                <div class="row">
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <form class="forms-sample mt-5" method="post" enctype="multipart/form-data" runat="Server">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="Photo"></label>
+                                    <input type="file" name="File" class="form-control" accept="image/"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="Link"></label>
+                                    <input asp-for="Link" class="form-control" />
+                                    <span class="text-danger" asp-validation-for="Link"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="submit_button" type="submit" class="btn btn-success ml-2">Edit</button>
+                        <a asp-action="Index" class="btn btn-dark ml-3">Go to Index</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <partial name="_Validation"/>
+ }

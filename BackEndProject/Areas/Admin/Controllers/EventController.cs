@@ -118,11 +118,134 @@ namespace BackEndProject.Areas.Admin.Controllers
             await _db.SaveChangesAsync(); 
             return RedirectToAction(nameof(Index));
         }
-        //public IActionResult SpeakerNumber(string key)
-        //{
-        //    ViewBag.result = key;
-        //    return Json(key);
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+            Event _event = await _db.Events.FindAsync(id);
+            if (_event == null) return NotFound();
+            List<EventSpeaker> eSpeaker = _db.EventSpeakers.Where(p => p.EventId == _event.Id).ToList();
+            List<Speaker> speakers = new List<Speaker>();
+            foreach (var item in eSpeaker) 
+            {
+                speakers.Add(_db.Speakers.FirstOrDefault(p => p.Id == item.SpeakerId));
+            }
+            ViewBag.Speakers = "";
 
-        //}
+            BackEndProject.Areas.Admin.ViewModels.EventVM detailVM = new ViewModels.EventVM
+            {
+                Event = _event,
+                AllSpeakers = _db.Speakers.ToList(),
+                Speakers = speakers
+            };
+            return View(detailVM);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Edit")]
+        public async Task<IActionResult> EditPost(int? id, ViewModels.EventVM eventVM)
+        {
+            if (id == null) return NotFound();
+            Event _event = await _db.Events.FindAsync(id);
+            if (_event == null) return NotFound();
+
+            List<EventSpeaker> event_speaker = _db.EventSpeakers.Where(p => p.EventId == _event.Id).ToList();
+            List<EventSpeaker> current_EventSpeaker = _db.EventSpeakers.Where(p => p.EventId == _event.Id).ToList();
+            List<Speaker> current_speakers = new List<Speaker>();
+            foreach (var item in current_EventSpeaker)
+            {
+                current_speakers.Add(_db.Speakers.FirstOrDefault(p => p.Id == item.SpeakerId));
+            }
+            if (!eventVM.Event.Photo.isImage())
+            {
+                ModelState.AddModelError(string.Empty, "Choose photo");
+                return View(new ViewModels.EventVM
+                {
+                    Event = _event,
+                    AllSpeakers = _db.Speakers.ToList(),
+                    Speakers = current_speakers
+                });
+            }
+
+            string keys = Request.Form["speakers"];
+            List<EventSpeaker> new_EventSpeaker = new List<EventSpeaker>();
+            if (keys != null)
+            {
+                string[] _keys = keys.Split(',');
+                List<int> ids = new List<int>();
+                foreach (var item in _keys)
+                {
+                    ids.Add(Int32.Parse(item));
+                }
+                foreach (int item in ids)
+                {
+                    new_EventSpeaker.Add(new EventSpeaker
+                    {
+                        EventId = _event.Id,
+                        SpeakerId = item
+                    });
+                }
+                current_EventSpeaker = new_EventSpeaker;
+                foreach (var item in event_speaker)
+                {
+                    _db.EventSpeakers.Remove(item);
+                }
+                foreach (var item in current_EventSpeaker)
+                {
+                    _db.EventSpeakers.Add(item);
+                }
+            }
+            if (eventVM.Event.Photo != null) 
+            {
+
+                _event.Image = await eventVM.Event.Photo.SaveImg(_env.WebRootPath, "img/event");
+            }
+            _event.Header = eventVM.Event.Header;
+            _event.Date = eventVM.Event.Date;
+            _event.Interval = eventVM.Event.Interval;
+            _event.Location = eventVM.Event.Location;
+            _event.Definition = eventVM.Event.Definition;
+            _event.Content = eventVM.Event.Content;
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+
+
+        }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            Event _event = await _db.Events.FindAsync(id);
+            if (_event == null) return NotFound();
+            List<EventSpeaker> eventspeakers = _db.EventSpeakers.Where(p => p.EventId == id).ToList();
+            List<Speaker> speakers = new List<Speaker>();
+            foreach (EventSpeaker event_speaker in eventspeakers)
+            {
+
+                speakers.Add(_db.Speakers.FirstOrDefault(p => p.Id == event_speaker.SpeakerId));
+            }
+            EventDetailVM detailVM = new EventDetailVM
+            {
+                Event = _event,
+                Speakers = speakers
+            };
+            return View(detailVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            if (id == null) return NotFound();
+            Event _event = await _db.Events.FindAsync(id);
+            if (_event == null) return NotFound();
+
+            Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/event", _event.Image);
+            _db.Events.Remove(_event);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

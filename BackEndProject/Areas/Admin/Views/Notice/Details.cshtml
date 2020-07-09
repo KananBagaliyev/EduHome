@@ -1,0 +1,26 @@
+﻿@model NoticeBoard
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Slider</h4>
+                <h4 class="card-title">Board №@Model.Id</h4>
+                <table>
+                    <tr>
+                        <th >Date</th>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.Date</td>
+                    </tr>
+                    <tr>
+                        <th>Content</th>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.Content</td>
+                    </tr>
+                </table>
+                <a asp-action="Index" class="btn btn-dark ml-3 mt-5">Go to Index</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

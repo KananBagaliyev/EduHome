@@ -1,0 +1,85 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Event</h4>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Header"></label>
+                                <input asp-for="@Model.Header" class="form-control" placeholder="Header">
+                                <span asp-validation-for="@Model.Header" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Photo"></label>
+                                <input asp-for="@Model.Photo" class="form-control" placeholder="Photo">
+                                <span asp-validation-for="@Model.Photo" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Publisher"></label>
+                                <input asp-for="@Model.Publisher" class="form-control" placeholder="Publisher">
+                                <span asp-validation-for="@Model.Publisher" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Date">Date (YYYY-MM-DD)</label>
+                                <input asp-for="@Model.Date" class="form-control" placeholder="Date">
+                                <span asp-validation-for="@Model.Date" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Content"></label>
+                        <textarea class="form-control" asp-for="@Model.Content" id="editor"></textarea>
+                        <span asp-validation-for="@Model.Content" class="text-danger"></span>
+                    </div>
+                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{>
+    <partial name="_Validation" />;
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" language="javascript" type="text/javascript"><</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        if ($('.text-editor')) {
+            $('.text-editor').ckeditor();
+            $('input[type=submit]').bind('click', function () {
+                $('.text-editor').ckeditorGet().updateElement();
+            });
+        }
+    </script>
+
+}
+
+
+
+
+

@@ -172,7 +172,7 @@
 
                     <div class="form-group">
                         <label asp-for="@Model.AboutTeacher.About"></label>
-                        <textarea asp-for="@Model.AboutTeacher.About" id="editor"></textarea>
+                        <textarea class="form-control" asp-for="@Model.AboutTeacher.About" id="editor"></textarea>
                         <span asp-validation-for="@Model.AboutTeacher.About" class="text-danger"></span>
                     </div>
                     <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
@@ -194,6 +194,12 @@
                 .catch(error => {
                     console.error(error);
                 });
+        if ($('.text-editor')) {
+            $('.text-editor').ckeditor();
+            $('input[type=submit]').bind('click', function () {
+                $('.text-editor').ckeditorGet().updateElement();
+            });
+        }
     </script>
 
     <script src="~/admin/js/dist/multi.min.js"></script>

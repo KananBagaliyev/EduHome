@@ -14,5 +14,6 @@ namespace BackEndProject.Areas.Admin.ViewModels
         public IEnumerable<Hobby> Hobbies { get; set; }
         public Skill Skill { get; set; }
         public IEnumerable<Department> Departments { get; set; }
+        public IEnumerable<Hobby> AllHobbies { get; set; }
     }
 }

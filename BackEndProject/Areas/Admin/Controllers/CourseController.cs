@@ -108,5 +108,43 @@ namespace BackEndProject.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Edit(int? id) 
+        {
+            if (id == null) return NotFound();
+            Course course = await _db.Courses.FindAsync(id);
+            if (course == null) return NotFound();
+            BackEndProject.Areas.Admin.ViewModels.CourseVM courseVM = new ViewModels.CourseVM
+            {
+                Course = course,
+                CourseDetail = _db.CourseDetails.FirstOrDefault(p=>p.Id == course.CourseDetailId),
+                CourseFeature = _db.CourseFeatures.FirstOrDefault(p=>p.Id == course.CourseFeatureId),
+                
+            };
+            return View(courseVM);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Edit")]
+        public async Task<IActionResult> EditPost(int? id,ViewModels.CourseVM courseVM)
+        {
+            if (id == null) return NotFound();
+            Course course = await _db.Courses.FindAsync(id);
+            if (course == null) return NotFound();
+
+            if (courseVM.Course.Photo != null) 
+            {
+                course.Image = await courseVM.Course.Photo.SaveImg(_env.WebRootPath, "img/course");
+            }
+
+            CourseDetail detail = courseVM.CourseDetail;
+            CourseFeature feature = courseVM.CourseFeature;
+            course.CourseDetail = detail;
+            course.CourseFeature = feature;
+            course = courseVM.Course;
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

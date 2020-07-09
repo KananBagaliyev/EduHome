@@ -53,8 +53,7 @@ namespace BackEndProject.Migrations
 
                     b.Property<int>("Experience");
 
-                    b.Property<string>("Facebook")
-                        .IsRequired();
+                    b.Property<string>("Facebook");
 
                     b.Property<string>("Mail")
                         .IsRequired();
@@ -62,8 +61,7 @@ namespace BackEndProject.Migrations
                     b.Property<string>("Phone")
                         .IsRequired();
 
-                    b.Property<string>("Pinterest")
-                        .IsRequired();
+                    b.Property<string>("Pinterest");
 
                     b.Property<string>("Skype")
                         .IsRequired();
@@ -72,11 +70,9 @@ namespace BackEndProject.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("Twitter")
-                        .IsRequired();
+                    b.Property<string>("Twitter");
 
-                    b.Property<string>("Vimeo")
-                        .IsRequired();
+                    b.Property<string>("Vimeo");
 
                     b.HasKey("Id");
 

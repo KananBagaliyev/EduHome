@@ -1,0 +1,31 @@
+﻿@model Slider
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Slider</h4>
+                <img src="~/img/slider/@Model.Image" style="width:70%" alt="Alternate Text" />
+                <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
+                    <div class="row">
+                        <div class="form-group">
+                            <label asp-for="Photo"></label>
+                            <input asp-for="Photo" class="form-control" />
+                            <span asp-validation-for="Photo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <button id="submit_button" type="submit" class="btn btn-success mr-2">Create</button>
+                    <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts{
+
+    <partial name="_Validation"/>
+
+ }

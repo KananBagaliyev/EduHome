@@ -1,0 +1,86 @@
+﻿@model BackEndProject.Areas.Admin.ViewModels.NoticeVM
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Notice Video</h4>
+                <div class="col-12">
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Notice Video
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td class="py-1">
+                                        <img src="~/img/notice/@Model.Video.Image" alt="Course" style="width:150px !important; height:100px !important; border-radius:0; border:2px solid black" />
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditVideo" asp-route-id="@Model.Video.Id" asp-controller="Notice" asp-area="Admin" class="btn btn-warning"><i class="mdi mdi-table-edit "></i></a>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Board List</h4>
+                <div class="col-12">
+                    <a asp-action="Create" asp-controller="Notice" asp-area="Admin" class="btn btn-success">Create a new board info</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Notice Video
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (NoticeBoard board in Model.Boards)
+                            {
+                                <tr>
+                                    <td class="py-1">
+                                        @if (board.Content.Length <= 130)
+                                        {
+                                            <p>@board.Date.ToString("MMM dd", CultureInfo.InvariantCulture) / @board.Content</p>
+                                        }
+                                        else
+                                        {
+                                            <p>@board.Date.ToString("MMM dd", CultureInfo.InvariantCulture) / BoardData @board.Id</p>
+                                            
+                                        }
+                                    </td>
+                                    <td>
+                                        <a asp-action="Details" asp-route-id="@board.Id" asp-controller="Notice" asp-area="Admin" class="btn btn-success"><i class="mdi mdi-details "></i></a>
+                                        <a asp-action="EditBoard" asp-route-id="@board.Id" asp-controller="Notice" asp-area="Admin" class="btn btn-warning"><i class="mdi mdi-table-edit "></i></a>
+                                        <a asp-action="Delete" asp-route-id="@board.Id" asp-controller="Notice" asp-area="Admin" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

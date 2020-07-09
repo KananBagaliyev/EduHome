@@ -20,7 +20,7 @@ namespace BackEndProject.Controllers
         {
             HomeVM homeVM = new HomeVM
             {
-                Sliders = _db.Sliders,
+                Sliders = _db.Sliders.OrderByDescending(p=>p.Id).Take(3),
                 AboutSlider = _db.AboutSliders.FirstOrDefault(),
                 Services = _db.Services,
                 AboutUs = _db.AboutUs.FirstOrDefault(),

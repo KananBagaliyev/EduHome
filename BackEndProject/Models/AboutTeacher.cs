@@ -24,13 +24,9 @@ namespace BackEndProject.Models
         public string Phone { get; set; }
         [Required]
         public string Skype { get; set; }
-        [Required]
         public string Facebook { get; set; }
-        [Required]
         public string Twitter { get; set; }
-        [Required]
         public string Pinterest { get; set; }
-        [Required]
         public string Vimeo { get; set; }
     }
 }
