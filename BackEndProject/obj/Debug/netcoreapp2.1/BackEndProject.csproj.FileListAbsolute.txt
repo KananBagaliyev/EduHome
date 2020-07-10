@@ -120,3 +120,8 @@ C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Area
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Validation.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_BlogSearch.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CourseSearch.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_EventSearch.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Course\Filter.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_TeacherSearch.cshtml.g.cs

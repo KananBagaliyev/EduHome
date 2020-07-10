@@ -68,7 +68,7 @@ namespace BackEndProject.Controllers
             User active_user = await _userManager.FindByEmailAsync(_login.Email);
             if (active_user == null)
             {
-                ModelState.AddModelError(string.Empty, "Email or Passwrod are wrong!!!");
+                ModelState.AddModelError(string.Empty, "Email or Password is incorrect");
                 return View(_login);
             }
             if (active_user.isDeleted == true)
@@ -88,7 +88,7 @@ namespace BackEndProject.Controllers
 
             if (!signInResult.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, "Email or Passwrod are wrong!!!");
+                ModelState.AddModelError(string.Empty, "Email or Password are wrong!!!");
                 return View(_login);
             }
             return RedirectToAction("Index", "Home");

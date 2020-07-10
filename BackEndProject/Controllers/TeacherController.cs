@@ -53,5 +53,14 @@ namespace BackEndProject.Controllers
 
             return View(detailVM);
         }
+        public IActionResult Search(string key)
+        {
+            var model = _db.Teachers.Where(b => b.Name.Contains(key)).Select(b => new Teacher
+            {
+                Id = b.Id,
+                Name = b.Name
+            }).Take(8);
+            return PartialView("_TeacherSearch", model);
+        }
     }
 }

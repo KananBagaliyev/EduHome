@@ -20,9 +20,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Teacher.Photo"></label>
-                                <input asp-for="@Model.Teacher.Photo" class="form-control" placeholder="Photo">
-                                <span asp-validation-for="@Model.Teacher.Photo" class="text-danger"></span>
+                                <label>Photo</label>
+                                <input type="file" name="File" class="form-control" placeholder="Photo">
                             </div>
                         </div>
 
@@ -223,10 +222,7 @@
         });
         $('#hobbies').multi({
 
-            // enable search
             enable_search: true,
-
-            // placeholder of search input
             search_placeholder: 'Search...'
 
         });

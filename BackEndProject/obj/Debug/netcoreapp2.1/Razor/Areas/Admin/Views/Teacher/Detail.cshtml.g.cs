@@ -59,7 +59,7 @@ using System.Globalization;
             WriteLiteral("<!-- Teacher Start -->\r\n<div class=\"teacher-details-area pt-150 pb-60\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-5 col-sm-5 col-xs-12\">\r\n                <div class=\"teacher-details-img\">\r\n                    ");
             EndContext();
             BeginContext(279, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "aa6a5bf9cd594783bc4af9836f037e8e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6800a0d0fbf94d8ab053732d2f07522a", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

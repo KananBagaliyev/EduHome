@@ -13,7 +13,7 @@ namespace BackEndProject.Extensions
         {
             return file.ContentType.Contains("image/");
         }
-        public static bool MaxLenght(this IFormFile file, int storage)
+        public static bool MaxLength(this IFormFile file, int storage)
         {
             return file.Length / 1024 >= storage;
         }

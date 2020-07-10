@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyModel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace BackEndProject.Areas.Admin.Controllers
 {
@@ -182,7 +183,7 @@ namespace BackEndProject.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Edit")]
-        public async Task<IActionResult> EditPost(int? id, BackEndProject.Areas.Admin.ViewModels.TeacherVM teacherVM)
+        public async Task<IActionResult> EditPost(int? id, BackEndProject.Areas.Admin.ViewModels.TeacherVM teacherVM, IFormFile File)
         {
             if (id == null) return NotFound();
             Teacher teacher = await _db.Teachers.FindAsync(id);
@@ -238,9 +239,9 @@ namespace BackEndProject.Areas.Admin.Controllers
 
            
 
-            if (teacherVM.Teacher.Photo != null) 
+            if (File != null) 
             {
-                teacher.Image = await teacherVM.Teacher.Photo.SaveImg(_env.WebRootPath, "img/teacher");
+                teacher.Image = await File.SaveImg(_env.WebRootPath, "img/teacher");
             }
 
 

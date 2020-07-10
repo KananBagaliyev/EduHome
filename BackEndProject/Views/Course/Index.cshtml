@@ -26,9 +26,9 @@
                     <h3>search courses</h3>
                 </div>
                 <div class="course-form">
-                    <form id="search" action="#">
-                        <input type="search" placeholder="Search..." name="search" />
-                        <button type="submit">search</button>
+                    <form id="search" asp-controller="Course" asp-action="Filter" method="get">
+                        <input type="search" placeholder="Search..." name="search" autocomplete="off" />
+                        <button type="submit" >search</button>
                     </form>
                 </div>
             </div>

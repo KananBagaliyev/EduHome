@@ -1,0 +1,70 @@
+﻿@model CourseVM
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center" style="background-image: url('@Url.Content("~/img/banner/"+Model.Background.Image)')!important">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>courses</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Course Start -->
+<div class="course-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="course-title">
+                    <h3>search courses</h3>
+                </div>
+                <div class="course-form">
+                    <form id="search" asp-controller="Course" asp-action="Filter" method="get">
+                        <input type="search" placeholder="Search..." name="search" autocomplete="off" />
+                        <button type="submit">search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @if (Model.Course != null)
+            {
+                @foreach (Course item in Model.Course)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-course mb-70">
+                            <div class="course-img">
+                                <a asp-controller="Course" asp-action="Details" asp-route-id="@item.Id">
+                                    <img src="~/img/course/@item.Image" alt="course">
+                                    <div class="course-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="course-content">
+                                <h3><a asp-controller="Course" asp-action="Details" asp-route-id="@item.Id">@item.Name</a></h3>
+                                <p>@item.CourseDetail.Content</p>
+                                <a class="default-btn" asp-controller="Course" asp-action="Detail" asp-route-id="@item.Id">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <h1 style="font-size:60px"> No Results have been found</h1>
+            }
+        </div>
+    </div>
+</div>
+<!-- Course End -->

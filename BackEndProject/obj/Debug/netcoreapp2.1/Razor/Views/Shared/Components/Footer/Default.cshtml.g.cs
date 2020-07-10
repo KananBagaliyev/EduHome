@@ -76,7 +76,7 @@ using System.Globalization;
                         ");
             EndContext();
             BeginContext(528, 1004, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18740142f0a245488ed865261868cf1d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e74f231459ed43baa66def54f9408ec0", async() => {
                 BeginContext(765, 760, true);
                 WriteLiteral(@"
                             <div id=""mc_embed_signup_scroll"" class=""mc-form"">
@@ -136,7 +136,7 @@ using System.Globalization;
                                 <a href=""index.html"">");
             EndContext();
             BeginContext(2506, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "7565a49b1eb74e3dae9ec2f67f3ce7a5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f45341d9ae5546fbb88731c2838f8213", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

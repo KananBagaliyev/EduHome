@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Teacher>
+
+@foreach (Teacher teacher in Model)
+{
+    <li class="list-group-item" style="padding-bottom:13px">
+        <a asp-controller="Teacher" asp-action="Detail" asp-route-id="@teacher.Id">@teacher.Name</a>
+    </li>
+}

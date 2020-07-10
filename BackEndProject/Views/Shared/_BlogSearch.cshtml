@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Blog>
+
+@foreach (Blog item in Model)
+{
+    <li class="list-group-item" style="padding-bottom:13px">
+        <a asp-controller="Blog" asp-action="Detail" asp-route-id="@item.Id">@item.Header</a>
+    </li>
+}

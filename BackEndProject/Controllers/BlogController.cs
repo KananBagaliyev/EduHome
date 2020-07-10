@@ -48,5 +48,14 @@ namespace BackEndProject.Controllers
             };
             return View(detailVM);
         }
+        public IActionResult Search(string key)
+        {
+            var model = _db.Blogs.Where(b => b.Header.Contains(key)).Select(b => new Blog
+            {
+                Id = b.Id,
+                Header = b.Header
+            }).Take(8);
+            return PartialView("_BlogSearch", model);
+        }
     }
 }
