@@ -10,13 +10,34 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="header-top-right text-right">
-                            <ul>
-                                <li><a href="login.html">login</a></li>
-                                <li><a href="signup.html">signup</a></li>
-                            </ul>
-                        </div>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="dropdown text-right" style="z-index:1;margin-top:15px">
+                                <button style="background: none !important;color:white" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @ViewBag.Fullname
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:50%;text-align:right;margin-left:175px" >
+                                    <a style="display:block;width:52%;margin-left:39px" class="dropdown-item" href="#">View Profile</a>
+                                    <a style="display:block;width:52%;margin-left:19px!important" class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a>
+                                </div>
+                            </div>
+
+                        }
+                        else
+                        {
+
+                            <div class="header-top-right text-right" style="display:flex;align-items:center;height:67px;justify-content:end">
+
+                                <ul>
+                                    <li><a asp-action="Login" asp-controller="Account">login</a></li>
+                                    <li><a asp-action="Register" asp-controller="Account">signup</a></li>
+                                </ul>
+
+                            </div>
+                        }
                     </div>
+                        
                 </div>
             </div>
         </div>

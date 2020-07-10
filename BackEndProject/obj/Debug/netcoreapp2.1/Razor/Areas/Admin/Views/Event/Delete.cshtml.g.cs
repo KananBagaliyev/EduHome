@@ -73,7 +73,7 @@ using System.Globalization;
                         ");
             EndContext();
             BeginContext(324, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "24c5f4bf76d54445b3c0834774ad1bdf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "50fe3f71d8824f91932110fd56ed0189", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -159,7 +159,7 @@ AddHtmlAttributeValue("", 346, Model.Event.Image, 346, 18, false);
             WriteLiteral("                                    <div class=\"single-speaker\" style=\"margin-left:30px\">\r\n                                        <div class=\"speaker-img\">\r\n                                            ");
             EndContext();
             BeginContext(1483, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4566c53119e9490095732a3915e41207", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "97c08ef3140640dc9d5e67e62ab51065", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -213,12 +213,12 @@ AddHtmlAttributeValue("", 1505, speaker.Image, 1505, 14, false);
             WriteLiteral("                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        ");
             EndContext();
             BeginContext(2085, 188, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5925a20328c84f099e58063737aee6f4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c32cdeeddaf341178da0886a79f3fed5", async() => {
                 BeginContext(2105, 93, true);
                 WriteLiteral("\r\n            <button type=\"submit\" class=\"btn btn-danger mr-2\">Delete</button>\r\n            ");
                 EndContext();
                 BeginContext(2198, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "085d58547bb1417881e5f13ef6ce152f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d25044900d5f480a9ca83da5f4b7fb39", async() => {
                     BeginContext(2241, 11, true);
                     WriteLiteral("Go to Index");
                     EndContext();

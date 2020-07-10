@@ -17,6 +17,12 @@ namespace BackEndProject.Helpers
                 System.IO.File.Delete(filePath);
             }
         }
+        public enum Roles
+        {
+            Admin,
+            Moderator,
+            Member
+        }
 
 
     }

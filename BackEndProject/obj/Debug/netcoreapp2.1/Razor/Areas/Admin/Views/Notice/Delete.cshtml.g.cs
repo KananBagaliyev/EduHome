@@ -73,7 +73,7 @@ using System.Globalization;
             WriteLiteral("</h4>\r\n                ");
             EndContext();
             BeginContext(290, 675, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40eedb0f10374b139ab13220987c42a6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c72da092d3d41e79dfc3d0fff28322c", async() => {
                 BeginContext(311, 166, true);
                 WriteLiteral("\r\n                    <table>\r\n                        <tr>\r\n                            <th>Date</th>\r\n                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
                 EndContext();
@@ -98,7 +98,7 @@ using System.Globalization;
                 WriteLiteral("</td>\r\n                        </tr>\r\n                    </table>\r\n                    <button id=\"submit_button\" type=\"submit\" class=\"btn btn-danger mt-5\">Delete</button>\r\n                    ");
                 EndContext();
                 BeginContext(872, 68, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c3a1293adcb4d969d6af5ac4b49fc82", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4681535dbbff46ff905db70476cab769", async() => {
                     BeginContext(925, 11, true);
                     WriteLiteral("Go to Index");
                     EndContext();
