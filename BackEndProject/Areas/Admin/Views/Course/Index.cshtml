@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Course>
+﻿@model BackEndProject.Areas.Admin.ViewModels.CourseUserVM
 @{
     Layout = "_AdminLayout";
  }
@@ -8,7 +8,10 @@
                 <div class="card-body">
                     <h4 class="card-title">Course List</h4>
                     <div class="col-12">
-                        <a asp-action="Create" class="btn btn-success">Create a new course</a>
+                        @if (Model.Role == "Admin")
+                        {
+                            <a asp-action="Create" class="btn btn-success">Create a new course</a>
+                        }
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -26,7 +29,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Course course in Model)
+                                @foreach (Course course in Model.Course)
                                 {
                                 <tr>
                                     <td class="py-1">
@@ -38,7 +41,10 @@
                                     <td>
                                         <a asp-action="Detail" asp-route-id="@course.Id" asp-controller="Course" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
                                         <a asp-action="Edit" asp-route-id="@course.Id" asp-controller="Course" asp-area="Admin" class="btn btn-warning"><i class="mdi mdi-table-edit "></i></a>
-                                        <a asp-action="Delete" asp-route-id="@course.Id" asp-controller="Course" asp-area="Admin" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                                        @if (Model.Role == "Admin")
+                                        {
+                                            <a asp-action="Delete" asp-route-id="@course.Id" asp-controller="Course" asp-area="Admin" class="btn btn-danger"><i class="mdi mdi-delete-forever "></i></a>
+                                        }
                                     </td>
                                 </tr>
                                 }

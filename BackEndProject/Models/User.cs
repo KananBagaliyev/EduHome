@@ -13,6 +13,8 @@ namespace BackEndProject.Models
         public string Fullname { get; set; }
         [Required]
         public bool isDeleted { get; set; }
+        public int? CourseID { get; set; }
+        public Course Course { get; set; }
         public User()
         {
             isDeleted = false;

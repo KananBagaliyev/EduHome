@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class AboutController : Controller
     {

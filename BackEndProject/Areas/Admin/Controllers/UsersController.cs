@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class UsersController : Controller
     {
@@ -147,6 +147,7 @@ namespace BackEndProject.Areas.Admin.Controllers
 
         }
 
+        [Authorize(Roles ="Admin,Moderator")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

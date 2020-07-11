@@ -23,7 +23,9 @@ namespace BackEndProject.Areas.Admin.ViewComponents
             {
                 User user = await _userManager.FindByNameAsync(User.Identity.Name);
                 ViewBag.Fullname = user.Fullname;
+                TempData["User"] = (await _userManager.GetRolesAsync(user))[0];
             }
+
 
             return View();
         }

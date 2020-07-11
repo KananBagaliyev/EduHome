@@ -68,7 +68,7 @@ using System.Globalization;
             ");
             EndContext();
             BeginContext(257, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee6dfd25761d43de9011f882984bc738", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7b6bd360dad4496b87f70db096ad231", async() => {
                 BeginContext(355, 40, true);
                 WriteLiteral("<img src=\"images/logo.svg\" alt=\"logo\" />");
                 EndContext();
@@ -238,7 +238,7 @@ using System.Globalization;
                     ");
             EndContext();
             BeginContext(7373, 195, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "141075dcae9b408983172ea3f0375ae8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17785c4e19e041b9b54960a11c40393f", async() => {
                 BeginContext(7441, 123, true);
                 WriteLiteral("\r\n                        <i class=\"mdi mdi-logout text-primary\"></i>\r\n                        Logout\r\n                    ");
                 EndContext();

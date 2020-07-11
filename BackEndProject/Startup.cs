@@ -24,7 +24,7 @@ namespace BackEndProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddHttpContextAccessor();
             services.AddSession();
 
             services.AddIdentity<User, IdentityRole>(IdentityOptions => {

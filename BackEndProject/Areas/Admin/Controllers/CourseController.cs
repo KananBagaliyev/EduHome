@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using BackEndProject.Areas.Admin.ViewModels;
 using BackEndProject.DAL;
 using BackEndProject.Extensions;
 using BackEndProject.Models;
 using BackEndProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using static BackEndProject.Helpers.Helper;
 
 namespace BackEndProject.Areas.Admin.Controllers
@@ -21,15 +26,33 @@ namespace BackEndProject.Areas.Admin.Controllers
     {
         private readonly AppDbContext _db;
         private readonly IHostingEnvironment _env;
-        public CourseController(AppDbContext db, IHostingEnvironment env)
+        private readonly UserManager<User> _userManager;
+        private readonly string _userId;
+        public CourseController(AppDbContext db, IHostingEnvironment env,UserManager<User> userManager, IHttpContextAccessor httpContextAccessor)
         {
             _db = db;
             _env = env;
+            _userManager = userManager;
+            _userId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-
-            return View(_db.Courses.OrderByDescending(p=>p.Id));
+            User user = await _userManager.FindByIdAsync(_userId);
+            if (user.isDeleted == false && (await _userManager.GetRolesAsync(user))[0] == "Moderator") 
+            {
+                CourseUserVM courseVM = new CourseUserVM
+                {
+                    Course = _db.Courses.Where(p => p.Id == user.CourseID),
+                    User = user,
+                    Role = (await _userManager.GetRolesAsync(user))[0]
+                };
+                return View(courseVM);
+            }
+            return View(new CourseUserVM {
+                Course = _db.Courses.OrderByDescending(p=>p.Id),
+                User = user,
+                Role = (await _userManager.GetRolesAsync(user))[0]
+            });
         }
         public async Task<IActionResult> Detail(int? id)
         {
@@ -44,6 +67,7 @@ namespace BackEndProject.Areas.Admin.Controllers
             };
             return View(detailVM);
         }
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             return View();
@@ -54,10 +78,6 @@ namespace BackEndProject.Areas.Admin.Controllers
         [ActionName("Create")]
         public async Task<IActionResult> Create(BackEndProject.Areas.Admin.ViewModels.CourseVM courseVM)
         {
-            //if (ModelState["Photo"].ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid)
-            //{
-            //    return View();
-            //}
             if (! courseVM.Course.Photo.isImage()) {
                 ModelState.AddModelError(string.Empty, "Choose photo");
                 return View();
@@ -76,6 +96,7 @@ namespace BackEndProject.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();

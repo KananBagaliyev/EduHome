@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class TeacherController : Controller
     {

@@ -13,7 +13,7 @@ using static BackEndProject.Helpers.Helper;
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class SliderController : Controller
     {
