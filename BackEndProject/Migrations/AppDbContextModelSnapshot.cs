@@ -151,7 +151,7 @@ namespace BackEndProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DataId");
+                    b.Property<int?>("DataId");
 
                     b.Property<string>("Phone")
                         .IsRequired();
@@ -253,8 +253,7 @@ namespace BackEndProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Facebook")
-                        .IsRequired();
+                    b.Property<string>("Facebook");
 
                     b.Property<string>("Location")
                         .IsRequired();
@@ -265,14 +264,11 @@ namespace BackEndProject.Migrations
                     b.Property<string>("Mail")
                         .IsRequired();
 
-                    b.Property<string>("Pinterest")
-                        .IsRequired();
+                    b.Property<string>("Pinterest");
 
-                    b.Property<string>("Twitter")
-                        .IsRequired();
+                    b.Property<string>("Twitter");
 
-                    b.Property<string>("Vimeo")
-                        .IsRequired();
+                    b.Property<string>("Vimeo");
 
                     b.Property<string>("Web")
                         .IsRequired();
@@ -749,8 +745,7 @@ namespace BackEndProject.Migrations
                 {
                     b.HasOne("BackEndProject.Models.Data", "Data")
                         .WithMany("CenterPhoneNumbers")
-                        .HasForeignKey("DataId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DataId");
                 });
 
             modelBuilder.Entity("BackEndProject.Models.Course", b =>

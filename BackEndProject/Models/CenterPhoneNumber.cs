@@ -11,7 +11,7 @@ namespace BackEndProject.Models
         public int Id { get; set; }
         [Required]
         public string Phone { get; set; }
-        public int DataId { get; set; }
+        public int? DataId { get; set; }
         public virtual Data Data { get; set; }
     }
 }

@@ -1,0 +1,139 @@
+﻿@model BackEndProject.Areas.Admin.ViewModels.ContactVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Event</h4>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Location"></label>
+                                <input asp-for="@Model.Data.Location" class="form-control" placeholder="Name">
+                                <span asp-validation-for="@Model.Data.Location" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Photo</label>
+                                <input type="file" name="File" class="form-control" placeholder="Photo">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <h4>Basic Informations</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Mail"></label>
+                                <input asp-for="@Model.Data.Mail" class="form-control" placeholder="Degree">
+                                <span asp-validation-for="@Model.Data.Mail" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Web"></label>
+                                <input asp-for="@Model.Data.Web" class="form-control" placeholder="Degree">
+                                <span asp-validation-for="@Model.Data.Web" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Facebook"></label>
+                                <input asp-for="@Model.Data.Facebook" class="form-control" placeholder="Experience">
+                                <span asp-validation-for="@Model.Data.Facebook" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Pinterest"></label>
+                                <input asp-for="@Model.Data.Pinterest" class="form-control" placeholder="Phone">
+                                <span asp-validation-for="@Model.Data.Pinterest" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Vimeo"></label>
+                                <input asp-for="@Model.Data.Vimeo" class="form-control" placeholder="Phone">
+                                <span asp-validation-for="@Model.Data.Vimeo" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label asp-for="@Model.Data.Twitter"></label>
+                                <input asp-for="@Model.Data.Twitter" class="form-control" placeholder="Phone">
+                                <span asp-validation-for="@Model.Data.Twitter" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-5">Current Numbers</h5>
+                    @foreach (CenterPhoneNumber cpn in Model.Numbers)
+                    {
+                        if (cpn != Model.Numbers.ElementAt(Model.Numbers.Count() - 1))
+                        {
+                            TempData["Numbers"] += cpn.Phone + "-------";
+                        }
+                        else
+                        {
+                            TempData["Numbers"] += cpn.Phone;
+}
+}
+
+                    <input type="text" class="form-control" disabled name="name" value="@TempData["Numbers"]" />
+
+                    <h5 class="mt-5">Choose Numbers</h5>
+
+                    <select name="numbers" id="numbers" multiple>
+                        @foreach (var item in Model.AllNumbers)
+                        {
+                            <option value=" @item.Id">@item.Phone</option>
+
+                        }
+                    </select>
+                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{>
+    <partial name="_Validation" />;
+    @*<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" language="javascript" type="text/javascript"><</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    @*<script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+    </script>*@
+
+    <script src="~/admin/js/dist/multi.min.js"></script>
+    <script>
+        $('#numbers').multi({
+            non_selected_header: 'Hobbies',
+            selected_header: 'Selected Hobbies'
+        });
+        $('#numbers').multi({
+
+            enable_search: true,
+            search_placeholder: 'Search...'
+
+        });
+    </script>
+
+}
+
+
+
+

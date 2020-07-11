@@ -63,7 +63,7 @@ using System.Globalization;
             WriteLiteral("\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12 grid-margin stretch-card\">\r\n            <div class=\"card\">\r\n                <div class=\"card-body\">\r\n                    <h4 class=\"card-title\">Slider</h4>\r\n                    ");
             EndContext();
             BeginContext(247, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83211ed762cf438cbd4d574c601ce846", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "945001eb24954ff993cbe734196d0846", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -90,7 +90,7 @@ AddHtmlAttributeValue("", 270, Model.Image, 270, 12, false);
             WriteLiteral("\r\n                    <div class=\"row\">\r\n\r\n                        ");
             EndContext();
             BeginContext(392, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9edf713b2124734a475fbccf2d4b51f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d63ef360c9a24861b71bea50cfaf55b7", async() => {
                 BeginContext(446, 11, true);
                 WriteLiteral("Go to Index");
                 EndContext();

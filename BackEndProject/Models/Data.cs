@@ -12,13 +12,9 @@ namespace BackEndProject.Models
         public int Id { get; set; }
         [Required]
         public string Logo { get; set; }
-        [Required]
         public string Facebook { get; set; }
-        [Required]
         public string Twitter { get; set; }
-        [Required]
         public string Pinterest { get; set; }
-        [Required]
         public string Vimeo { get; set; }
         [Required]
         public string Location { get; set; }

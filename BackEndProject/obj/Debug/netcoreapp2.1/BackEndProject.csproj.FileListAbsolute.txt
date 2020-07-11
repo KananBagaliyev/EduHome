@@ -132,3 +132,9 @@ C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Area
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Detail.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\DeletedUser.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Activate.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Testimonial\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Testimonial\Edit.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Testimonial\Delete.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Contact\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Contact\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Contact\Edit.cshtml.g.cs
