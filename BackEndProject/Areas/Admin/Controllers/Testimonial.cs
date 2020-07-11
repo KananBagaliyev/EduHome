@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BackEndProject.DAL;
 using BackEndProject.Extensions;
 using BackEndProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Moderator")]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class Testimonial : Controller
     {
         private readonly AppDbContext _db;

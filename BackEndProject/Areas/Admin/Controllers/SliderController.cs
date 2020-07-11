@@ -5,12 +5,16 @@ using System.Threading.Tasks;
 using BackEndProject.DAL;
 using BackEndProject.Extensions;
 using BackEndProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using static BackEndProject.Helpers.Helper;
 
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Moderator")]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class SliderController : Controller
     {
         private readonly AppDbContext _db;

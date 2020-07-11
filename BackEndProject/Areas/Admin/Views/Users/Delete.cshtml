@@ -1,0 +1,48 @@
+﻿@model UserVM
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">User</h4>
+                <table style="width:100%">
+                    <tr>
+                        <th>Fullname:</th>
+                        <td>@Model.Fullname</td>
+                    </tr>
+                    <tr>
+                        <th>Username:</th>
+                        <td>@Model.Username</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <th>Role:</th>
+                        <td>@Model.Role</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="row ml-2">
+
+    <h6 class="text-danger">Are you sure? This process is unrecoverable</h6>
+</div>
+<div class="row ml-2">
+    <form class="forms-sample" method="post">
+        <button type="submit" class="btn btn-danger mr-2">Delete</button>
+        <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+    </form>
+</div>
+

@@ -125,3 +125,10 @@ C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\View
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_EventSearch.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Course\Filter.cshtml.g.cs
 C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_TeacherSearch.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\Components\User\Default.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Index.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Edit.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Delete.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Detail.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\DeletedUser.cshtml.g.cs
+C:\Users\Kanan\Desktop\EduHome\BackEndProject\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Users\Activate.cshtml.g.cs

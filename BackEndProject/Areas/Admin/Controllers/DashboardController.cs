@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackEndProject.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Moderator")]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class DashboardController : Controller
     {
         public IActionResult Index()

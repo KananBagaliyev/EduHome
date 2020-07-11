@@ -11,10 +11,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BackEndProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Moderator")]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class TeacherController : Controller
     {
         private readonly AppDbContext _db;
