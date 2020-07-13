@@ -45,8 +45,7 @@ namespace BackEndProject.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("About")
-                        .IsRequired()
-                        .HasMaxLength(450);
+                        .IsRequired();
 
                     b.Property<string>("Degree")
                         .IsRequired();

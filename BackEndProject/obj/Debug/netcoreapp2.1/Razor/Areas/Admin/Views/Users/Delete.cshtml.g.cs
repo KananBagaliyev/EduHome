@@ -136,12 +136,12 @@ using System.Globalization;
     ");
             EndContext();
             BeginContext(1125, 197, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5060ad8215514f34bd4b424c2a70c335", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f5b7d7e1682640c7a7f91e220bc95b64", async() => {
                 BeginContext(1166, 85, true);
                 WriteLiteral("\r\n        <button type=\"submit\" class=\"btn btn-danger mr-2\">Delete</button>\r\n        ");
                 EndContext();
                 BeginContext(1251, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab2844adcc5042a0a23e2d32328a9121", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a658306d8244c0daecc780d2ebd6643", async() => {
                     BeginContext(1294, 11, true);
                     WriteLiteral("Go to Index");
                     EndContext();

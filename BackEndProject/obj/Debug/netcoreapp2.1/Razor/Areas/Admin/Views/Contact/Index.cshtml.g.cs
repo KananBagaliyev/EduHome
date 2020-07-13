@@ -70,7 +70,7 @@ using System.Globalization;
             WriteLiteral("<div class=\"row\">\r\n    <div class=\"col-lg-12 grid-margin stretch-card\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h4 class=\"card-title\">Data</h4>\r\n                <div class=\"row\">\r\n                    ");
             EndContext();
             BeginContext(256, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3dbc187bbdbe4342b63a3b3679c70a0e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de8683ad658446e584c97b4c25ae4709", async() => {
                 BeginContext(344, 25, true);
                 WriteLiteral("Create a new phone number");
                 EndContext();
@@ -97,7 +97,7 @@ using System.Globalization;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(395, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3afffa2061984a9d9ec9457b3157ccc4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "157e551cb7a94b91b133609264be43b3", async() => {
                 BeginContext(487, 20, true);
                 WriteLiteral("Delete phone numbers");
                 EndContext();
@@ -144,7 +144,7 @@ using System.Globalization;
                                     ");
             EndContext();
             BeginContext(1295, 121, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cbb90e73423242c3a2d7b74be416d38c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6b945dd9d23f4f969b9b4ae237f6d06a", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -181,7 +181,7 @@ AddHtmlAttributeValue("", 1316, Model.Logo, 1316, 11, false);
             WriteLiteral("</p>\r\n                                </td>\r\n                                <td>\r\n                                    ");
             EndContext();
             BeginContext(1681, 151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4c2c35aa0474abda2a756d44cb94f19", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cdde5773c1db4eb196389cdfc1762e58", async() => {
                 BeginContext(1795, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();
@@ -221,7 +221,7 @@ AddHtmlAttributeValue("", 1316, Model.Logo, 1316, 11, false);
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(1870, 151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2852c6556bf4df6b86855a405f46000", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4b51afdc190410a974839d0d92866ce", async() => {
                 BeginContext(1982, 35, true);
                 WriteLiteral("<i class=\"mdi mdi-table-edit \"></i>");
                 EndContext();

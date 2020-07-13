@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackEndProject.Areas.Admin.ViewModels;
 using BackEndProject.DAL;
 using BackEndProject.Extensions;
 using BackEndProject.Models;
@@ -61,33 +62,25 @@ namespace BackEndProject.Areas.Admin.Controllers
             //}
             //TempData["Speakers"] = listx;
             ViewBag.Speakers = _db.Speakers.ToList();
-            EventDetailVM detailVM = new EventDetailVM
-            {
-                Speakers = _db.Speakers.ToList()
-            };
-            return View(detailVM);
+            return View();
         
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Create")]
-        public async Task<IActionResult> CreatePost(EventDetailVM eventVM)
+        public async Task<IActionResult> CreatePost(EventCreateVM eventVM)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View(new EventDetailVM { Speakers = _db.Speakers.ToList() });
-            //}
-            //if (ModelState["Photo"].ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid)
-            //{
-            //    return View();
-            //}urn View(eventVM);
-            //}
+            ViewBag.Speakers = _db.Speakers.ToList();
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
             string keys = Request.Form["speakers"];
             if (keys == null)
             {
                 ModelState.AddModelError(string.Empty, "Choose at Least one speaker");
-                return View(new EventDetailVM {Speakers = _db.Speakers.ToList() });
+                return View();
             }
             string[] _keys = keys.Split(',');
             List<int> ids = new List<int>();
@@ -95,16 +88,23 @@ namespace BackEndProject.Areas.Admin.Controllers
             {
                 ids.Add(Int32.Parse(item));
             }
-            if (!eventVM.Event.Photo.isImage())
+            if (!eventVM.Photo.isImage())
             {
                 ModelState.AddModelError(string.Empty, "Choose photo");
-                return View(new EventDetailVM { Speakers = _db.Speakers.ToList() });
+                return View();
             }
 
 
-            Event _event = eventVM.Event;
-            //_event.Image = "event9.jpg";
-            _event.Image = await eventVM.Event.Photo.SaveImg(_env.WebRootPath, "img/event");
+            Event _event =new Event 
+            {
+                Date = eventVM.Date,
+                Header = eventVM.Header,
+                Definition = eventVM.Definition,
+                Interval  = eventVM.Interval,
+                Location = eventVM.Location,
+                Content = eventVM.Content,
+                Image = await eventVM.Photo.SaveImg(_env.WebRootPath, "img/event")
+        };
             List<EventSpeaker> eSpeaker = new List<EventSpeaker>();
 
             foreach (int item in ids)
@@ -133,27 +133,31 @@ namespace BackEndProject.Areas.Admin.Controllers
             {
                 speakers.Add(_db.Speakers.FirstOrDefault(p => p.Id == item.SpeakerId));
             }
-            ViewBag.Speakers = "";
 
-            BackEndProject.Areas.Admin.ViewModels.EventVM detailVM = new ViewModels.EventVM
+            BackEndProject.Areas.Admin.ViewModels.EventEditVM eventVM = new ViewModels.EventEditVM
             {
-                Event = _event,
-                AllSpeakers = _db.Speakers.ToList(),
-                Speakers = speakers
+                Image = _event.Image,
+                Content = _event.Content,
+                Header = _event.Header,
+                Date = _event.Date,
+                Interval = _event.Interval,
+                Definition = _event.Definition,
+                Location = _event.Location,
+                Speakers = speakers,
+                AllSpeakers = _db.Speakers.ToList()
             };
-            return View(detailVM);
+            return View(eventVM);
 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Edit")]
-        public async Task<IActionResult> EditPost(int? id, ViewModels.EventVM eventVM)
+        public async Task<IActionResult> EditPost(int? id, ViewModels.EventEditVM eventVM,IFormFile File)
         {
             if (id == null) return NotFound();
             Event _event = await _db.Events.FindAsync(id);
             if (_event == null) return NotFound();
-
             List<EventSpeaker> event_speaker = _db.EventSpeakers.Where(p => p.EventId == _event.Id).ToList();
             List<EventSpeaker> current_EventSpeaker = _db.EventSpeakers.Where(p => p.EventId == _event.Id).ToList();
             List<Speaker> current_speakers = new List<Speaker>();
@@ -161,16 +165,14 @@ namespace BackEndProject.Areas.Admin.Controllers
             {
                 current_speakers.Add(_db.Speakers.FirstOrDefault(p => p.Id == item.SpeakerId));
             }
-            if (!eventVM.Event.Photo.isImage())
+            eventVM.AllSpeakers = _db.Speakers.ToList();
+            eventVM.Speakers = current_speakers;
+            eventVM.Image = _event.Image;
+            if (!ModelState.IsValid) 
             {
-                ModelState.AddModelError(string.Empty, "Choose photo");
-                return View(new ViewModels.EventVM
-                {
-                    Event = _event,
-                    AllSpeakers = _db.Speakers.ToList(),
-                    Speakers = current_speakers
-                });
+                return View(eventVM);
             }
+           
 
             string keys = Request.Form["speakers"];
             List<EventSpeaker> new_EventSpeaker = new List<EventSpeaker>();
@@ -200,17 +202,22 @@ namespace BackEndProject.Areas.Admin.Controllers
                     _db.EventSpeakers.Add(item);
                 }
             }
-            if (eventVM.Event.Photo != null) 
+            if (File != null) 
             {
-
-                _event.Image = await eventVM.Event.Photo.SaveImg(_env.WebRootPath, "img/event");
+                if (!File.isImage())
+                {
+                    ModelState.AddModelError(string.Empty, "Choose photo type");
+                    return View(eventVM);
+                }
+                Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/event", _event.Image);
+                _event.Image = await File.SaveImg(_env.WebRootPath, "img/event");
             }
-            _event.Header = eventVM.Event.Header;
-            _event.Date = eventVM.Event.Date;
-            _event.Interval = eventVM.Event.Interval;
-            _event.Location = eventVM.Event.Location;
-            _event.Definition = eventVM.Event.Definition;
-            _event.Content = eventVM.Event.Content;
+            _event.Header = eventVM.Header;
+            _event.Date = eventVM.Date;
+            _event.Interval = eventVM.Interval;
+            _event.Location = eventVM.Location;
+            _event.Definition = eventVM.Definition;
+            _event.Content = eventVM.Content;
             await _db.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));

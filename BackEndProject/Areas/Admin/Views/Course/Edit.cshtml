@@ -1,4 +1,4 @@
-﻿@model BackEndProject.Areas.Admin.ViewModels.CourseVM
+﻿@model BackEndProject.Areas.Admin.ViewModels.CourseEditVM
 @{
     ViewData["Title"] = "Create";
 }
@@ -8,46 +8,45 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Create Course</h4>
-                <img src="~/img/course/@Model.Course.Image" alt="" style="width:50%"/>
+                <img src="~/img/course/@TempData["image"]" alt="" style="width:50%"/>
                 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                 <form class="forms-sample" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Course.Name"></label>
-                                <input asp-for="@Model.Course.Name" class="form-control" placeholder="Name">
-                                <span asp-validation-for="@Model.Course.Name" class="text-danger"></span>
+                                <label asp-for="@Model.Name"></label>
+                                <input asp-for="@Model.Name" class="form-control" placeholder="Name">
+                                <span asp-validation-for="@Model.Name" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Course.Photo"></label>
-                                <input asp-for="@Model.Course.Photo" class="form-control" placeholder="Name">
-                                <span asp-validation-for="@Model.Course.Photo" class="text-danger"></span>
+                                <label>Photo</label>
+                                <input type="file" id="file" name="File" accept="image/" class="form-control" placeholder="Name">
                             </div>
                         </div>
 
 
                     </div>
                     <div class="form-group">
-                        <label asp-for="@Model.CourseDetail.Content"></label>
-                        <textarea asp-for="@Model.CourseDetail.Content" id="editor1"></textarea>
-                        <span asp-validation-for="@Model.CourseDetail.Content" class="text-danger"></span>
+                        <label asp-for="@Model.Content"></label>
+                        <textarea asp-for="@Model.Content" id="editor1"></textarea>
+                        <span asp-validation-for="@Model.Content" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="@Model.CourseDetail.AboutCourse"></label>
-                        <textarea asp-for="@Model.CourseDetail.AboutCourse" id="editor2"></textarea>
-                        <span asp-validation-for="@Model.CourseDetail.AboutCourse" class="text-danger"></span>
+                        <label asp-for="@Model.AboutCourse"></label>
+                        <textarea asp-for="@Model.AboutCourse" id="editor2"></textarea>
+                        <span asp-validation-for="@Model.AboutCourse" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="@Model.CourseDetail.HowToApply"></label>
-                        <textarea asp-for="@Model.CourseDetail.HowToApply" id="editor3"></textarea>
-                        <span asp-validation-for="@Model.CourseDetail.HowToApply" class="text-danger"></span>
+                        <label asp-for="@Model.HowToApply"></label>
+                        <textarea asp-for="@Model.HowToApply" id="editor3"></textarea>
+                        <span asp-validation-for="@Model.HowToApply" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="@Model.CourseDetail.Certification"></label>
-                        <textarea asp-for="@Model.CourseDetail.Certification" id="editor4"></textarea>
-                        <span asp-validation-for="@Model.CourseDetail.Certification" class="text-danger"></span>
+                        <label asp-for="@Model.Certification"></label>
+                        <textarea asp-for="@Model.Certification" id="editor4"></textarea>
+                        <span asp-validation-for="@Model.Certification" class="text-danger"></span>
                     </div>
                     <div class="row">
                         <div class="col-md-4">

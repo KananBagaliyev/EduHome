@@ -1,4 +1,4 @@
-﻿@model BackEndProject.Areas.Admin.ViewModels.TeacherVM
+﻿@model BackEndProject.Areas.Admin.ViewModels.TeacherCreateVM
 @{
     ViewData["Title"] = "Create";
 }
@@ -13,16 +13,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Teacher.Name"></label>
-                                <input asp-for="@Model.Teacher.Name" class="form-control" placeholder="Name">
-                                <span asp-validation-for="@Model.Teacher.Name" class="text-danger"></span>
+                                <label asp-for="@Model.Name"></label>
+                                <input asp-for="@Model.Name" class="form-control" placeholder="Name">
+                                <span asp-validation-for="@Model.Name" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Teacher.Photo"></label>
-                                <input asp-for="@Model.Teacher.Photo" class="form-control" placeholder="Photo">
-                                <span asp-validation-for="@Model.Teacher.Photo" class="text-danger"></span>
+                                <label asp-for="@Model.Photo"></label>
+                                <input asp-for="@Model.Photo" class="form-control" placeholder="Photo" accept="image/">
+                                <span asp-validation-for="@Model.Photo" class="text-danger"></span>
                             </div>
                         </div>
 

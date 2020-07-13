@@ -120,12 +120,12 @@ using System.Globalization;
             WriteLiteral("</td>\r\n                    </tr>\r\n                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n<div class=\"row ml-2\">\r\n    ");
             EndContext();
             BeginContext(1013, 200, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1abae79015434cbbabfbb34994b93c8c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60ea4a0be8af4302b14498bfe5f06b83", async() => {
                 BeginContext(1054, 88, true);
                 WriteLiteral("\r\n        <button type=\"submit\" class=\"btn btn-success mr-2\">Activate</button>\r\n        ");
                 EndContext();
                 BeginContext(1142, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60098be28a9f41b59416c696648e1592", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "183fe3b1c4904fcb8e53dfc435b254d3", async() => {
                     BeginContext(1185, 11, true);
                     WriteLiteral("Go to Index");
                     EndContext();

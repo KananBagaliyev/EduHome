@@ -8,6 +8,7 @@ using BackEndProject.Models;
 using BackEndProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static BackEndProject.Helpers.Helper;
 
@@ -45,11 +46,22 @@ namespace BackEndProject.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Create")]
-        public async Task<IActionResult> CreatePost(Blog blog) 
+        public async Task<IActionResult> CreatePost(BackEndProject.Areas.Admin.ViewModels.BlogCreateVM blogVM) 
         {
-            Blog _blog = blog;
-            _blog.Image =  await blog.Photo.SaveImg(_env.WebRootPath, "img/blog");
-            _db.Blogs.Add(_blog);
+            if (!ModelState.IsValid) 
+            {
+                return View(blogVM);
+            }
+            Blog blog = new Blog
+            {
+                Image = await blogVM.Photo.SaveImg(_env.WebRootPath, "img/blog"),
+                Header = blogVM.Header,
+                Publisher = blogVM.Publisher,
+                Date = blogVM.Date,
+                Content = blogVM.Content
+            };
+            
+            _db.Blogs.Add(blog);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -59,27 +71,47 @@ namespace BackEndProject.Areas.Admin.Controllers
             if (id == null) return NotFound();
             Blog blog = await _db.Blogs.FindAsync(id);
             if (blog == null) return NotFound();
-            return View(blog);
+
+            ViewModels.BlogEditVM blogVM = new ViewModels.BlogEditVM
+            {
+                Image = blog.Image,
+                Header = blog.Header,
+                Publisher = blog.Publisher,
+                Date = blog.Date,
+                Content = blog.Content
+            };
+            return View(blogVM);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Edit")]
-        public async Task<IActionResult> EditPost(int? id,Blog blog)
+        public async Task<IActionResult> EditPost(int? id,BackEndProject.Areas.Admin.ViewModels.BlogEditVM blogVM,IFormFile File)
         {
             if (id == null) return NotFound();
-            Blog new_blog = await _db.Blogs.FindAsync(id);
-            if (new_blog == null) return NotFound();
-            if (!blog.Photo.isImage()) 
+            Blog blog = await _db.Blogs.FindAsync(id);
+            if (blog == null) return NotFound();
+            blogVM.Image = blog.Image;
+            if (!ModelState.IsValid) 
             {
-                ModelState.AddModelError(string.Empty, "Choose photo");
-                return View(blog);
+                return View(blogVM);
             }
-            new_blog.Image = await blog.Photo.SaveImg(_env.WebRootPath, "img/blog");
-            new_blog.Header = blog.Header;
-            new_blog.Publisher = blog.Publisher;
-            new_blog.Date = blog.Date;
-            new_blog.Content = blog.Content;
+
+            if (File != null) 
+            {
+                if (!File.isImage())
+                {
+                    ModelState.AddModelError(string.Empty, "Chose photo type");
+                    return View(blogVM);
+                }
+                Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/blog", blog.Image);
+                blog.Image = await File.SaveImg(_env.WebRootPath, "img/blog");
+            }
+           
+            blog.Header = blog.Header;
+            blog.Publisher = blog.Publisher;
+            blog.Date = blog.Date;
+            blog.Content = blog.Content;
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

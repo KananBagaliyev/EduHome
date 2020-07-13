@@ -66,7 +66,7 @@ using System.Globalization;
             WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(65, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04f0736334e54f678b75e3ff6a8a4054", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d862c9ab724a42cb80267f245ec9c019", async() => {
                 BeginContext(71, 87, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Index</title>\r\n");
                 EndContext();
@@ -86,7 +86,7 @@ using System.Globalization;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(167, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9086095d23fd4a8b8c939a399646b071", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d730fbf6e7cc4cba86ec8b363b0eaa68", async() => {
                 BeginContext(173, 22, true);
                 WriteLiteral("\r\n    <h2>Salam</h2>\r\n");
                 EndContext();

@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Internal;
 using Microsoft.EntityFrameworkCore;
 using static BackEndProject.Helpers.Helper;
 
@@ -76,19 +78,33 @@ namespace BackEndProject.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Create")]
-        public async Task<IActionResult> Create(BackEndProject.Areas.Admin.ViewModels.CourseVM courseVM)
+        public async Task<IActionResult> Create(BackEndProject.Areas.Admin.ViewModels.CourseCreateVM courseVM )
         {
-            if (! courseVM.Course.Photo.isImage()) {
-                ModelState.AddModelError(string.Empty, "Choose photo");
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            if (! courseVM.Photo.isImage()) {
+                ModelState.AddModelError(string.Empty, "Choose photo type");
                 return View();
             }
 
             CourseFeature feature = courseVM.CourseFeature;
-            CourseDetail detail = courseVM.CourseDetail;
-            Course course = courseVM.Course;
-            course.CourseFeature = feature;
-            course.CourseDetail = detail;
-            course.Image = await courseVM.Course.Photo.SaveImg(_env.WebRootPath, "img/course");
+            CourseDetail detail = new CourseDetail
+            {
+                AboutCourse = courseVM.AboutCourse,
+                HowToApply = courseVM.HowToApply,
+                Certification = courseVM.Certification,
+                Content = courseVM.Content
+            };
+
+            Course course = new Course
+            {
+                Name = courseVM.Name,
+                CourseDetail = detail,
+                CourseFeature = feature,
+                Image = await courseVM.Photo.SaveImg(_env.WebRootPath, "img/course")
+            };
 
             _db.Courses.Add(course);
             await _db.SaveChangesAsync();
@@ -139,11 +155,15 @@ namespace BackEndProject.Areas.Admin.Controllers
             if (id == null) return NotFound();
             Course course = await _db.Courses.FindAsync(id);
             if (course == null) return NotFound();
-            BackEndProject.Areas.Admin.ViewModels.CourseVM courseVM = new ViewModels.CourseVM
+            TempData["image"] = course.Image;
+            BackEndProject.Areas.Admin.ViewModels.CourseEditVM courseVM = new ViewModels.CourseEditVM
             {
-                Course = course,
-                CourseDetail = _db.CourseDetails.FirstOrDefault(p=>p.Id == course.CourseDetailId),
-                CourseFeature = _db.CourseFeatures.FirstOrDefault(p=>p.Id == course.CourseFeatureId),
+                Name = course.Name,
+                Content = _db.CourseDetails.FirstOrDefault(p => p.Id == course.CourseDetailId).Content,
+                AboutCourse = _db.CourseDetails.FirstOrDefault(p => p.Id == course.CourseDetailId).AboutCourse,
+                HowToApply = _db.CourseDetails.FirstOrDefault(p => p.Id == course.CourseDetailId).HowToApply,
+                Certification = _db.CourseDetails.FirstOrDefault(p => p.Id == course.CourseDetailId).Certification,
+                CourseFeature = _db.CourseFeatures.FirstOrDefault(p => p.Id == course.CourseFeatureId)
                 
             };
             return View(courseVM);
@@ -151,22 +171,34 @@ namespace BackEndProject.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ActionName("Edit")]
-        public async Task<IActionResult> EditPost(int? id,ViewModels.CourseVM courseVM)
+        public async Task<IActionResult> EditPost(int? id,ViewModels.CourseEditVM courseVM,IFormFile File)
         {
             if (id == null) return NotFound();
             Course course = await _db.Courses.FindAsync(id);
             if (course == null) return NotFound();
-
-            if (courseVM.Course.Photo != null) 
+            TempData["image"] = course.Image;
+            if (!ModelState.IsValid) 
             {
-                course.Image = await courseVM.Course.Photo.SaveImg(_env.WebRootPath, "img/course");
+                return View(courseVM);
             }
 
-            CourseDetail detail = courseVM.CourseDetail;
+            if (File != null) 
+            {
+                Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/course", course.Image);
+                course.Image = await File.SaveImg(_env.WebRootPath, "img/course");
+            }
+
+            CourseDetail detail = new CourseDetail
+            {
+                Content = courseVM.Content,
+                Certification = courseVM.Certification,
+                HowToApply = courseVM.HowToApply,
+                AboutCourse = courseVM.AboutCourse
+            };
             CourseFeature feature = courseVM.CourseFeature;
             course.CourseDetail = detail;
             course.CourseFeature = feature;
-            course = courseVM.Course;
+            course.Name = courseVM.Name;
 
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

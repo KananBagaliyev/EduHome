@@ -1,4 +1,4 @@
-﻿@model BackEndProject.Areas.Admin.ViewModels.EventVM
+﻿@model BackEndProject.Areas.Admin.ViewModels.EventEditVM
 @{
     ViewData["Title"] = "Create";
 }
@@ -7,22 +7,22 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Create Event</h4>
+                <h4 class="card-title">Edit Event</h4>
+                <img src="~/img/event/@Model.Image" alt="Alternate Text" />
                 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                 <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Header"></label>
-                                <input asp-for="@Model.Event.Header" class="form-control" placeholder="Header">
-                                <span asp-validation-for="@Model.Event.Header" class="text-danger"></span>
+                                <label asp-for="@Model.Header"></label>
+                                <input asp-for="@Model.Header" class="form-control" placeholder="Header">
+                                <span asp-validation-for="@Model.Header" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Photo"></label>
-                                <input asp-for="@Model.Event.Photo" class="form-control" placeholder="Photo">
-                                <span asp-validation-for="@Model.Event.Photo" class="text-danger"></span>
+                                <label>Photo</label>
+                                <input type="file" id="file" name="File" class="form-control" placeholder="Photo" accept="image/">
                             </div>
                         </div>
 
@@ -31,65 +31,73 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Date"></label>
-                                <input asp-for="@Model.Event.Date" class="form-control" placeholder="Definition">
-                                <span asp-validation-for="@Model.Event.Date" class="text-danger"></span>
+                                <label asp-for="@Model.Date"></label>
+                                <input asp-for="@Model.Date" class="form-control" placeholder="Definition">
+                                <span asp-validation-for="@Model.Date" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Interval"></label>
-                                <input asp-for="@Model.Event.Interval" class="form-control" placeholder="Interval">
-                                <span asp-validation-for="@Model.Event.Interval" class="text-danger"></span>
+                                <label asp-for="@Model.Interval"></label>
+                                <input asp-for="@Model.Interval" class="form-control" placeholder="Interval">
+                                <span asp-validation-for="@Model.Interval" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Location"></label>
-                                <input asp-for="@Model.Event.Location" class="form-control" placeholder="Location">
-                                <span asp-validation-for="@Model.Event.Location" class="text-danger"></span>
+                                <label asp-for="@Model.Location"></label>
+                                <input asp-for="@Model.Location" class="form-control" placeholder="Location">
+                                <span asp-validation-for="@Model.Location" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Definition"></label>
-                                <input asp-for="@Model.Event.Definition" class="form-control" placeholder="Definition">
-                                <span asp-validation-for="@Model.Event.Definition" class="text-danger"></span>
+                                <label asp-for="@Model.Definition"></label>
+                                <input asp-for="@Model.Definition" class="form-control" placeholder="Definition">
+                                <span asp-validation-for="@Model.Definition" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
-                    <h4>Current speakers:</h4>
-                    @foreach (var item in Model.Speakers)
+                    @if (Model.Speakers != null)
                     {
-                        if (item != Model.Speakers.ElementAt(Model.Speakers.Count() - 1))
+                        foreach (var item in Model.Speakers)
                         {
-                            ViewBag.Speakers += item.Name + "/" + item.Speciality + "-------";
+                            if (item != Model.Speakers.Last())
+                            {
+                                ViewBag.inputSpeaker += item.Name + "/" + item.Speciality + "-------";
+                            }
+                            else
+                            {
+                                ViewBag.inputSpeaker += item.Name + "/" + item.Speciality;
+                            }
                         }
-                        else
-                        {
-                            ViewBag.Speakers += item.Name + "/" + item.Speciality;
-                        }
+                        <input type="text" disabled class="form-control" name="name" value="@ViewBag.inputSpeaker" />
                     }
-                    <input type="text" disabled class="form-control" name="name" value="@ViewBag.Speakers" />
-                    
+
+
+
                     <h4>Choose new speaker(s):</h4>
                     <br />
+                    @if (Model.AllSpeakers != null)
+                    {
+                        <select name="speakers" id="speakers" multiple>
+                            @foreach (var item in Model.AllSpeakers)
+                            {
+                                <option value=" @item.Id">@item.Name</option>
 
-                    <select name="speakers" id="speakers" multiple>
-                        @foreach (var item in Model.AllSpeakers)
-                        {
-                            <option value=" @item.Id">@item.Name</option>
+                            }
+                        </select>
+                    }
 
-                        }
-                    </select>
+
 
 
                     <div class="form-group">
-                        <label asp-for="@Model.Event.Content"></label>
-                        <textarea asp-for="@Model.Event.Content" id="editor"></textarea>
-                        <span asp-validation-for="@Model.Event.Content" class="text-danger"></span>
+                        <label asp-for="@Model.Content"></label>
+                        <textarea asp-for="@Model.Content" id="editor"></textarea>
+                        <span asp-validation-for="@Model.Content" class="text-danger"></span>
                     </div>
-                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Edit</button>
                     <a asp-action="Index" class="btn btn-dark">Go to Index</a>
                 </form>
             </div>

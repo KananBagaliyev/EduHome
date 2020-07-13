@@ -1,4 +1,4 @@
-﻿@model Blog
+﻿@model BackEndProject.Areas.Admin.ViewModels.BlogCreateVM
 @{
     ViewData["Title"] = "Create";
 }
@@ -21,7 +21,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="@Model.Photo"></label>
-                                <input asp-for="@Model.Photo" class="form-control" placeholder="Photo">
+                                <input asp-for="@Model.Photo" class="form-control" placeholder="Photo" accept="image/">
                                 <span asp-validation-for="@Model.Photo" class="text-danger"></span>
                             </div>
                         </div>
@@ -47,10 +47,10 @@
 
                     <div class="form-group">
                         <label asp-for="@Model.Content"></label>
-                        <input class="form-control" asp-for="@Model.Content" id="editor" />
+                        <textarea class="form-control" asp-for="@Model.Content" id="editor" ></textarea>
                         <span asp-validation-for="@Model.Content" class="text-danger"></span>
                     </div>
-                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Create</button>
                     <a asp-action="Index" class="btn btn-dark">Go to Index</a>
                 </form>
             </div>

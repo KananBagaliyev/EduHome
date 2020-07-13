@@ -1,4 +1,4 @@
-﻿@model EventDetailVM
+﻿@model BackEndProject.Areas.Admin.ViewModels.EventCreateVM
 @{
     ViewData["Title"] = "Create";
 }
@@ -13,16 +13,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Header"></label>
-                                <input asp-for="@Model.Event.Header" class="form-control" placeholder="Header">
-                                <span asp-validation-for="@Model.Event.Header" class="text-danger"></span>
+                                <label asp-for="@Model.Header"></label>
+                                <input asp-for="@Model.Header" class="form-control" placeholder="Header">
+                                <span asp-validation-for="@Model.Header" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Photo"></label>
-                                <input asp-for="@Model.Event.Photo" class="form-control" placeholder="Photo">
-                                <span asp-validation-for="@Model.Event.Photo" class="text-danger"></span>
+                                <label asp-for="@Model.Photo"></label>
+                                <input asp-for="@Model.Photo" class="form-control" placeholder="Photo" accept="image/">
+                                <span asp-validation-for="@Model.Photo" class="text-danger"></span>
                             </div>
                         </div>
 
@@ -31,30 +31,30 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Date"></label>
-                                <input asp-for="@Model.Event.Date" class="form-control" placeholder="Definition">
-                                <span asp-validation-for="@Model.Event.Date" class="text-danger"></span>
+                                <label asp-for="@Model.Date"></label>
+                                <input asp-for="@Model.Date" class="form-control" placeholder="Definition">
+                                <span asp-validation-for="@Model.Date" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Interval"></label>
-                                <input asp-for="@Model.Event.Interval" class="form-control" placeholder="Interval">
-                                <span asp-validation-for="@Model.Event.Interval" class="text-danger"></span>
+                                <label asp-for="@Model.Interval"></label>
+                                <input asp-for="@Model.Interval" class="form-control" placeholder="Interval">
+                                <span asp-validation-for="@Model.Interval" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Location"></label>
-                                <input asp-for="@Model.Event.Location" class="form-control" placeholder="Location">
-                                <span asp-validation-for="@Model.Event.Location" class="text-danger"></span>
+                                <label asp-for="@Model.Location"></label>
+                                <input asp-for="@Model.Location" class="form-control" placeholder="Location">
+                                <span asp-validation-for="@Model.Location" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label asp-for="@Model.Event.Definition"></label>
-                                <input asp-for="@Model.Event.Definition" class="form-control" placeholder="Definition">
-                                <span asp-validation-for="@Model.Event.Definition" class="text-danger"></span>
+                                <label asp-for="@Model.Definition"></label>
+                                <input asp-for="@Model.Definition" class="form-control" placeholder="Definition">
+                                <span asp-validation-for="@Model.Definition" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                     <br />
 
                     <select name="speakers" id="speakers" multiple>
-                            @foreach (var item in Model.Speakers)
+                            @foreach (var item in ViewBag.Speakers)
                             {
                                 <option  value=" @item.Id">@item.Name</option>
 
@@ -73,9 +73,9 @@
 
 
                     <div class="form-group">
-                        <label asp-for="@Model.Event.Content"></label>
-                        <textarea asp-for="@Model.Event.Content" id="editor"></textarea>
-                        <span asp-validation-for="@Model.Event.Content" class="text-danger"></span>
+                        <label asp-for="@Model.Content"></label>
+                        <textarea asp-for="@Model.Content" id="editor"></textarea>
+                        <span asp-validation-for="@Model.Content" class="text-danger"></span>
                     </div>
                     <button id="submit_button" type="submit" class="btn btn-primary mr-2">Submit</button>
                     <a asp-action="Index" class="btn btn-dark">Go to Index</a>

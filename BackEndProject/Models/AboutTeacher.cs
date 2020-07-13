@@ -12,7 +12,7 @@ namespace BackEndProject.Models
         public int Id { get; set; }
         [Required, MaxLength(50)]
         public string Speciality { get; set; }
-        [Required, MinLength(100), MaxLength(450)]
+        [Required,MinLength(100)]
         public string About { get; set; }
         [Required]
         public string Degree { get; set; }
