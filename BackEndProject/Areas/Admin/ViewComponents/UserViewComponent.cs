@@ -1,4 +1,6 @@
-﻿using BackEndProject.Models;
+﻿using BackEndProject.Areas.Admin.ViewModels;
+using BackEndProject.DAL;
+using BackEndProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,10 +13,12 @@ namespace BackEndProject.Areas.Admin.ViewComponents
     public class UserViewComponent : ViewComponent
     {
         private readonly UserManager<User> _userManager;
+        private readonly AppDbContext _db;
 
-        public UserViewComponent(UserManager<User> userManager)
+        public UserViewComponent(UserManager<User> userManager, AppDbContext db)
         {
             _userManager = userManager;
+            _db = db;
         }
 
         public async Task<IViewComponentResult> InvokeAsync() 
@@ -26,8 +30,13 @@ namespace BackEndProject.Areas.Admin.ViewComponents
                 TempData["User"] = (await _userManager.GetRolesAsync(user))[0];
             }
 
+            ReplySubscriberVM navVM = new ReplySubscriberVM
+            {
+                Reply = _db.Replies.OrderByDescending(p=>p.Id).Take(3),
+                Subscriber = _db.Subscribers.OrderByDescending(p=>p.Id).Take(3)
+            };
 
-            return View();
+            return View(navVM);
         }
     }
 }

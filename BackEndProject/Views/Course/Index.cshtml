@@ -53,7 +53,7 @@
                             {
                                 if (course.CourseDetailId == detail.Id)
                                 {
-                                    <p>@detail.Content</p>
+                                    <p>@Html.Raw(detail.Content)</p>
                                 }
                             }
 

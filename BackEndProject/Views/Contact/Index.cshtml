@@ -1,0 +1,98 @@
+﻿
+@model DataVM
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>contact</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Contact Start -->
+
+<div class="contact-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                <div class="contact-contents text-center">
+                    <div class="single-contact mb-65">
+                        <div class="contact-icon">
+                            <img src="~/img/contact/contact1.png" alt="contact">
+                        </div>
+                        <div class="contact-add">
+                            <h3>Location</h3>
+                            <p>@Model.Data.Location</p>
+                        </div>
+                    </div>
+                    <div class="single-contact mb-65">
+                        <div class="contact-icon">
+                            <img src="~/img/contact/contact2.png" alt="contact">
+                        </div>
+                        <div class="contact-add">
+                            <h3>Phone Numbers</h3>
+                            @foreach (var item in Model.Phone) 
+                            {
+                                <p>@item.Phone</p>
+                            }
+                        </div>
+                    </div>
+                    <div class="single-contact">
+                        <div class="contact-icon">
+                            <img src="~/img/contact/contact3.png" alt="contact">
+                        </div>
+                        <div class="contact-add">
+                            <h3>Website</h3>
+                            <p>@Model.Data.Web</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div class="reply-area">
+                    <h3>LEAVE A REPLY</h3>
+                    <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut<br> the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Name</p>
+                                <input asp-for="@Model.Reply.Name">
+                                <span class="text-danger" asp-validation-for="@Model.Reply.Name"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <p>Email</p>
+                                <input asp-for="@Model.Reply.Email">
+                                <span class="text-danger" asp-validation-for="@Model.Reply.Email"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <p>Subject</p>
+                                <input asp-for="@Model.Reply.Subject">
+                                <span class="text-danger" asp-validation-for="@Model.Reply.Subject"></span>
+                                <p>Message</p>
+                                <textarea asp-for="@Model.Reply.Message" cols="15" rows="10"></textarea>
+                                <span class="text-danger" asp-validation-for="@Model.Reply.Message"></span>
+                            </div>
+                        </div>
+                        <button class="reply-btn" type="submit"><span>send message</span></button>
+                        <p class="form-messege"></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+@section Scripts{
+    <partial name="_Validation"/>
+
+ }

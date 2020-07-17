@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using BackEndProject.DAL;
 using BackEndProject.Models;
@@ -45,6 +46,24 @@ namespace BackEndProject.Controllers
             };
             return View(detailVM);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task <IActionResult> Detail(CourseDetailVM detailVM) 
+        {
+            Reply reply = new Reply
+            {
+                Name = detailVM.Reply.Name,
+                Email = detailVM.Reply.Email,
+                Subject = detailVM.Reply.Subject,
+                Message = detailVM.Reply.Message
+            };
+
+            _db.Replies.Add(reply);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Detail));
+        }
         public IActionResult Search(string key)
         {
             var model = _db.Courses.Where(b => b.Name.Contains(key)).Select(b => new Course
@@ -78,5 +97,6 @@ namespace BackEndProject.Controllers
 
             return View(model);
         }
+
     }
 }

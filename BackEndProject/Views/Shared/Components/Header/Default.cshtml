@@ -18,7 +18,7 @@
                                     @ViewBag.Fullname
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:50%;text-align:right;margin-left:175px" >
-                                    <a style="display:block;width:52%;margin-left:39px" class="dropdown-item" href="#">View Profile</a>
+                                    <a style="display:block;width:52%;margin-left:39px" class="dropdown-item" asp-action="Index" asp-controller="Account">View Profile</a>
                                     <a style="display:block;width:52%;margin-left:19px!important" class="dropdown-item" asp-action="Logout" asp-controller="Account">Logout</a>
                                 </div>
                             </div>
@@ -71,12 +71,12 @@
                                         <li>
                                             <a asp-action="Index" asp-controller="Blog">blog</a>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a asp-action="Index" asp-controller="Contact">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
                             @{string controller = @ViewContext.RouteData.Values["controller"].ToString();}
-                            @if (controller != "Home" && controller != "About" && controller != "Contact")
+                            @if (controller != "Home" && controller != "About" && controller != "Contact" && controller!="Account")
                             {
                                 <input type="hidden" id="ctrl" value="@controller" />
                                 <!--Search Form Start-->

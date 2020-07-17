@@ -93,7 +93,7 @@ using System.Globalization;
                                         ");
             EndContext();
             BeginContext(969, 155, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "064127deed1a44519aa2d62c31d8e88c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "974d535f7483462e9d1186290e8769f6", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -120,7 +120,7 @@ AddHtmlAttributeValue("", 992, Model.Video.Image, 992, 18, false);
             WriteLiteral("\r\n                                    </td>\r\n                                    <td>\r\n                                        ");
             EndContext();
             BeginContext(1251, 161, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12a1a4378b8e439aade01025e2e54c84", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "134afe3db2644b51b2b49941a8b6d58d", async() => {
                 BeginContext(1373, 35, true);
                 WriteLiteral("<i class=\"mdi mdi-table-edit \"></i>");
                 EndContext();
@@ -176,7 +176,7 @@ AddHtmlAttributeValue("", 992, Model.Video.Image, 992, 18, false);
                     ");
             EndContext();
             BeginContext(1892, 115, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0534d3ea1cab4ef5b0cb7a8e9c12f427", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e668ceb9e864f30af509c6dd2f8feef", async() => {
                 BeginContext(1980, 23, true);
                 WriteLiteral("Create a new board info");
                 EndContext();
@@ -295,7 +295,7 @@ AddHtmlAttributeValue("", 992, Model.Video.Image, 992, 18, false);
             WriteLiteral("                                    </td>\r\n                                    <td>\r\n                                        ");
             EndContext();
             BeginContext(3483, 150, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95642841ac1b49f4bece22e77a279a16", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a03a8723800b4577aec7968f6899b5e5", async() => {
                 BeginContext(3597, 32, true);
                 WriteLiteral("<i class=\"mdi mdi-details \"></i>");
                 EndContext();
@@ -335,7 +335,7 @@ AddHtmlAttributeValue("", 992, Model.Video.Image, 992, 18, false);
             WriteLiteral("\r\n                                        ");
             EndContext();
             BeginContext(3675, 155, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3473efb911934018a73702d3f64cabf0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d85c6c5041f461dbfb5c15468e9e7fe", async() => {
                 BeginContext(3791, 35, true);
                 WriteLiteral("<i class=\"mdi mdi-table-edit \"></i>");
                 EndContext();
@@ -375,7 +375,7 @@ AddHtmlAttributeValue("", 992, Model.Video.Image, 992, 18, false);
             WriteLiteral("\r\n                                        ");
             EndContext();
             BeginContext(3872, 156, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19480f577fc5440799a33076a2853d9a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51e05867870148689cb1c90fa1360208", async() => {
                 BeginContext(3984, 40, true);
                 WriteLiteral("<i class=\" mdi mdi-delete-forever \"></i>");
                 EndContext();

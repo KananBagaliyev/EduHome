@@ -8,6 +8,7 @@ namespace BackEndProject.ViewModels
 {
     public class HeaderFooterVM
     {
+        public Subscriber Subscriber { get; set; }
         public Data Data { get; set; }
         public IEnumerable<CenterPhoneNumber> CenterPhoneNumbers { get; set; }
     }

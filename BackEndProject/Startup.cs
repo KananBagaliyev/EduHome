@@ -48,6 +48,7 @@ namespace BackEndProject
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseStatusCodePagesWithRedirects("/Error/{0}");
 
             app.UseStaticFiles();
 

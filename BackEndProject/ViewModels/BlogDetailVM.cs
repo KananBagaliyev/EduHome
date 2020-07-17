@@ -8,6 +8,7 @@ namespace BackEndProject.ViewModels
 {
     public class BlogDetailVM
     {
+        public Reply Reply { get; set; }
         public Background Background { get; set; }
         public Blog Blog { get; set; }
         public IEnumerable<Event> Events { get; set; }

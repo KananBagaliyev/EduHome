@@ -52,6 +52,11 @@ namespace BackEndProject.Areas.Admin.Controllers
             {
                 return View(blogVM);
             }
+            if (!blogVM.Photo.isImage()) 
+            {
+                ModelState.AddModelError(string.Empty, "Choose Photo");
+                return View(blogVM);
+            }
             Blog blog = new Blog
             {
                 Image = await blogVM.Photo.SaveImg(_env.WebRootPath, "img/blog"),
@@ -108,10 +113,10 @@ namespace BackEndProject.Areas.Admin.Controllers
                 blog.Image = await File.SaveImg(_env.WebRootPath, "img/blog");
             }
            
-            blog.Header = blog.Header;
-            blog.Publisher = blog.Publisher;
-            blog.Date = blog.Date;
-            blog.Content = blog.Content;
+            blog.Header = blogVM.Header;
+            blog.Publisher = blogVM.Publisher;
+            blog.Date = blogVM.Date;
+            blog.Content = blogVM.Content;
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
@@ -139,7 +144,17 @@ namespace BackEndProject.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-       
+        public async Task<IActionResult> Search(string key)
+        {
+            if (key == null) key = "";
+            var blog = _db.Blogs.OrderByDescending(p => p.Id).ToList();
+
+            if (key.Length > 0 || key == "")
+            {
+                blog = _db.Blogs.Where(c => c.Header.Contains(key)).OrderByDescending(p => p.Id).ToList();
+            }
+            return PartialView("_BlogSearch", blog);
+        }
 
 
     }

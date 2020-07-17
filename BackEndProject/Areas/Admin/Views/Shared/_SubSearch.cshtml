@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Subscriber>
+<table class="table ">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Subscriber subscriber in Model)
+        {
+            @if (subscriber.isActivated == false)
+            {
+                <tr class="rows">
+                    <td class="py-1">
+                        <p>@subscriber.Mail.ToLower()*</p>
+                    </td>
+
+                    <td>
+                        <a asp-action="Seen" asp-route-id="@subscriber.Id" asp-controller="Subscriber" asp-area="Admin" class="btn btn-success"><i class="mdi mdi-check-all btn-icon-append"></i></a>
+                        <a id="delete_one" value="@subscriber.Id" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr class="rows" style="background-color:#d7d0d0">
+                    <td class="py-1">
+                        <p>@subscriber.Mail.ToLower()</p>
+                    </td>
+
+                    <td>
+                        <a id="delete_one" value="@subscriber.Id" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+
+

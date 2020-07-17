@@ -1,0 +1,85 @@
+﻿@model BackEndProject.Areas.Admin.ViewModels.ReplyAnswerVM
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.Reply.Name</td>
+                                    <td>@Model.Reply.Email</td>
+                                    <td>@Model.Reply.Subject</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6" style="border:1px solid black;">
+                        <h2>Message</h2>
+                        <p disabled>@Model.Reply.Message</p>
+                    </div>
+                    <div class="col-md-6">
+                        @if (Model.Reply.Checked == true)
+                        {
+                            <a asp-action="Unread" asp-route-id="@Model.Reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as unread</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Read" asp-route-id="@Model.Reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as read</a>
+                        }
+                    </div>
+                </div>
+
+                <div class="reply-area mt-5">
+                    <h3>Give an answer</h3>
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <h3>Subject</h3>
+                                <input class="form-control" asp-for="@Model.Subject">
+                                <span class="text-danger" asp-validation-for="@Model.Subject"></span>
+                                <h3>Message</h3>
+                                <textarea asp-for="@Model.Message" id="editor"></textarea>
+                                <span class="text-danger" asp-validation-for="@Model.Message"></span>
+                            </div>
+                        </div>
+                        <button class="btn btn-success mt-2" type="submit"><span>Send message</span></button>
+                    </form>
+                </div>
+
+                <div class="row mt-5">
+                    <a asp-action="Index" asp-controller="Reply" asp-area="Admin" class="btn btn-dark ">Go to Index</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_Validation"/>
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+ }
+
+
+
+

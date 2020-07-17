@@ -55,6 +55,12 @@ namespace BackEndProject.Areas.Admin.Controllers
 
             if (File != null) 
             {
+                if (!File.isImage()) 
+                {
+                    ModelState.AddModelError(string.Empty, "Choose Photo");
+                    return View(_video);
+                }
+                Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/notice", video.Image);
                 video.Image = await File.SaveImg(_env.WebRootPath, "img/notice");
             }
 

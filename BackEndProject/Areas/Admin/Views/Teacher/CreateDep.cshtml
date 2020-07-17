@@ -1,0 +1,44 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Hobby</h4>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Abbreviation"></label>
+                                <input asp-for="Abbreviation" class="form-control" placeholder="Abbreviation">
+                                <span asp-validation-for="Abbreviation" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control" placeholder="Name">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="submit_button" type="submit" class="btn btn-primary mr-2">Create</button>
+                    <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{>
+    <partial name="_Validation" />;
+}
+
+
+
+
+

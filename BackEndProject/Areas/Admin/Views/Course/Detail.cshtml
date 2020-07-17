@@ -34,20 +34,20 @@
                                 {
                                     if (detail.Id == Model.Course.CourseDetailId)
                                     {
-                                        <p>@detail.Content </p>
+                                        <p>@Html.Raw(detail.Content) </p>
 
                                         <div class="course-details-left">
                                             <div class="single-course-left">
                                                 <h3>about course</h3>
-                                                <p>@detail.AboutCourse</p>
+                                                <p>@Html.Raw(detail.AboutCourse)</p>
                                             </div>
                                             <div class="single-course-left">
                                                 <h3>how to apply</h3>
-                                                <p>@detail.HowToApply</p>
+                                                <p>@Html.Raw(detail.HowToApply)</p>
                                             </div>
                                             <div class="single-course-left">
                                                 <h3>certification</h3>
-                                                <p class="margin">@detail.Certification</p>
+                                                <p class="margin">@Html.Raw(detail.Certification)</p>
 
                                             </div>
                                         </div>

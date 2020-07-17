@@ -69,7 +69,7 @@ using System.Globalization;
             WriteLiteral("    <li class=\"list-group-item\" style=\"padding-bottom:13px\">\r\n        ");
             EndContext();
             BeginContext(138, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de0320d6ec6a4f39b205e8205a662c65", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3d220a97ca744359887d718d35e3ba1", async() => {
                 BeginContext(212, 11, false);
 #line 6 "C:\Users\Kanan\Desktop\EduHome\BackEndProject\Views\Shared\_CourseSearch.cshtml"
                                                                             Write(course.Name);

@@ -1,0 +1,278 @@
+﻿@model IEnumerable<Reply>
+@{
+    Layout = "_AdminLayout";
+}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Reply List</h4>
+                <div class="col-12">
+                    <a  class="btn btn-warning checkbox_button" id="read_reply" style="display:none;">Mark selected as read</a>
+                    <a  class="btn btn-danger checkbox_button" id="delete_reply" style="display:none">Delete selected</a>
+
+                </div>
+                @if (Model.Count() > 0)
+                {
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="checkbox" name="name" value="All" />
+                                    </th>
+                                    <th>
+                                        Fullname
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Content
+                                    </th>
+                                    <th>
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Reply reply in Model)
+                                {
+                                    @if (reply.Checked == false)
+                                    {
+                                        <tr class="rows">
+                                            <td>
+                                                <input class="checkbox" type="checkbox" name="name" value="@reply.Id" />
+                                            </td>
+                                            <td class="py-1">
+                                                <p>@reply.Name.ToUpper()*</p>
+                                            </td>
+                                            <td class="py-1">
+                                                <p>@reply.Email.ToLower()</p>
+                                            </td>
+                                            <td class="py-1">
+                                                @if (reply.Subject.Length > 20)
+                                                {
+                                                    <p>@reply.Subject.ToLower().Substring(0, 20)</p>
+                                                }
+                                                else
+                                                {
+                                                    <p>@reply.Subject.ToLower()</p>
+                                                }
+                                            </td>
+                                            <td>
+                                                <a asp-action="Detail" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
+                                                <a asp-action="Answer" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Answer</a>
+                                                <a asp-action="Read" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as read</a>
+                                                <a id="delete_one" value="@reply.Id" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="rows" style="background-color:#d7d0d0">
+                                            <td>
+                                                <input class="checkbox" type="checkbox" name="name" value="@reply.Id" />
+                                            </td>
+                                            <td class="py-1">
+                                                <p>@reply.Name.ToUpper()</p>
+                                            </td>
+                                            <td class="py-1">
+                                                <p>@reply.Email.ToLower()</p>
+                                            </td>
+                                            <td class="py-1">
+                                                @if (reply.Subject.Length > 20)
+                                                {
+                                                    <p>@reply.Subject.ToLower().Substring(0, 20)</p>
+                                                }
+                                                else
+                                                {
+                                                    <p>@reply.Subject.ToLower()</p>
+                                                }
+                                            </td>
+                                            <td>
+                                                <a asp-action="Detail" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
+                                                <a asp-action="Answer" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Answer</a>
+                                                <a asp-action="Unread" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as unread</a>
+                                                <a id="delete_one" value="@reply.Id" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {<h2 class="mt-5">There are no new replies</h2>}
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        let checkboxes = document.querySelectorAll(".checkbox")
+        let rows = document.querySelectorAll(".rows")
+        let selectAll = document.getElementById("checkbox")
+        let buttons = document.querySelectorAll(".checkbox_button")
+        console.log(selectAll)
+        for (var i = 0; i < checkboxes.length; ++i)
+        {
+            checkboxes[i].onclick = function ()
+            {
+                for (var k = 0; k < buttons.length; ++k)
+                {
+                    buttons[k].style.display = "inline-block";
+                }
+                if (this.checked)
+                {
+                    this.parentElement.parentElement.classList.add("row-color")
+                }
+                else
+                {
+                    this.parentElement.parentElement.classList.remove("row-color")
+                }
+                if (document.querySelectorAll(".row-color").length == 0)
+                {
+                    for (var k = 0; k < buttons.length; ++k) {
+                        buttons[k].style.display = "none";
+                    }
+                }
+                if (document.querySelectorAll(".row-color").length == rows.length) {
+                    selectAll.checked = true;
+                }
+                else
+                {
+                    selectAll.checked = false;
+                }
+            }
+
+        }
+        selectAll.onclick = function ()
+        {
+            if (this.checked) {
+                for (let i = 0; i < rows.length; ++i) {
+                    if (rows[i].className == "rows") {
+                        rows[i].classList.add("row-color")
+                    }
+                }
+                for (var k = 0; k < checkboxes.length; ++k)
+                {
+                    checkboxes[k].checked = true;
+                }
+                for (var k = 0; k < buttons.length; ++k) {
+                    buttons[k].style.display = "inline-block";
+                }
+
+            }
+            else
+            {
+                for (let i = 0; i < rows.length; ++i) {
+                    rows[i].classList.remove("row-color")
+                }
+                for (var k = 0; k < checkboxes.length; ++k) {
+                    checkboxes[k].checked = false;
+                }
+                for (var k = 0; k < buttons.length; ++k) {
+                    buttons[k].style.display = "none";
+                }
+            }
+        }
+
+        $("#read_reply").click(function () {
+            
+            let values = [];
+            for (var i = 0; i < checkboxes.length; ++i)
+            {
+                if (checkboxes[i].checked)
+                {
+                    values.push(checkboxes[i].value);
+                }
+            }
+            $.ajax({
+                url: "/Admin/Reply/AllRead",
+                type: "Post",
+                //dataType: "json",
+                data: { value: JSON.stringify(values) },
+                success: function (response)
+                {
+                    selectAll.checked = false;
+                    for (var k = 0; k < buttons.length; ++k) {
+                        buttons[k].style.display = "none";
+                    }
+                    for (var i = 0; i < checkboxes.length; ++i) {
+                        checkboxes[i].checked = false;
+                    }
+                    location.reload();
+                }
+            })
+            
+        })
+
+        $("#delete_reply").click(function () {
+            let values = [];
+            for (var i = 0; i < checkboxes.length; ++i) {
+                if (checkboxes[i].checked) {
+                    values.push(checkboxes[i].value);
+                }
+            }
+            $.ajax({
+                url: "/Admin/Reply/AllDelete",
+                type: "Get",
+                //dataType: "json",
+                data: { value: JSON.stringify(values) },
+                success: function (response) {
+                    selectAll.checked = false;
+                    for (var k = 0; k < buttons.length; ++k) {
+                        buttons[k].style.display = "none";
+                    }
+                    for (var i = 0; i < checkboxes.length; ++i) {
+                        checkboxes[i].checked = false;
+                    }
+                    location.reload();
+                }
+            })
+        })
+
+        $("#delete_one").click(function (e) {
+            e.preventDefault();
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            url: "/Admin/Reply/DeleteOne?key=" + $("#delete_one").attr("value"),
+                            type: "Get",
+                            success: function (response) {
+                                selectAll.checked = false;
+                                for (var k = 0; k < buttons.length; ++k) {
+                                    buttons[k].style.display = "none";
+                                }
+                                for (var i = 0; i < checkboxes.length; ++i) {
+                                    checkboxes[i].checked = false;
+                                }
+                                location.reload();
+                            }
+
+                        })
+                        swal("Poof! Your file has been deleted!", {
+                            icon: "success",
+                        });
+                       
+                    } else {
+                        swal("Your file is safe!");
+                    }
+                });
+        })
+    </script>
+
+ }
+

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BackEndProject.Models;
 using BackEndProject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Remotion.Linq.Parsing.Structure.IntermediateModel;
@@ -21,6 +22,42 @@ namespace BackEndProject.Controllers
             _signInManager = signInManager;
             _roleManager = roleManager;
         }
+        [Authorize]
+        public async Task<IActionResult> Index() 
+        {
+            User user = await _userManager.GetUserAsync(User);
+            EditAccountVM accountVM = new EditAccountVM
+            {
+                Username = user.UserName,
+                Fullname = user.Fullname,
+                Email = user.Email
+            };
+            return View(accountVM);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(EditAccountVM accountVM)
+        {
+            User user = await _userManager.GetUserAsync(User);
+            if (!ModelState.IsValid) 
+            {
+                return View(accountVM);
+            }
+            user.Email = accountVM.Email;
+            user.Fullname = accountVM.Fullname;
+            user.UserName = accountVM.Username;
+            IdentityResult identityResult = await _userManager.UpdateAsync(user);
+            if (!identityResult.Succeeded)
+            {
+                foreach (var error in identityResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View(accountVM);
+            }
+            return Redirect("/home/index");
+        }
+
         public IActionResult Register()
         {
             return View();

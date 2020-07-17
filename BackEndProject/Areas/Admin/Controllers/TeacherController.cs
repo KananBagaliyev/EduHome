@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using BackEndProject.Migrations;
 
 namespace BackEndProject.Areas.Admin.Controllers
 {
@@ -293,6 +294,164 @@ namespace BackEndProject.Areas.Admin.Controllers
             _db.Teachers.Remove(teacher);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Hobby() 
+        {
+            return View(_db.Hobbies);
+        }
+        public IActionResult CreateHobby()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateHobby(Hobby _hobby)
+        {
+            if(_db.Hobbies.Any(h=>h.Name.ToLower() == _hobby.Name.ToLower())) 
+            {
+                ModelState.AddModelError(string.Empty, "This hobby is already exist");
+                return View();
+            }
+            Hobby hobby = new Hobby
+            {
+                Name = _hobby.Name
+            };
+
+            _db.Hobbies.Add(hobby);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult HobbyDetail(int? id)
+        {
+            if (id == null) return NotFound();
+            Hobby hobby = _db.Hobbies.FirstOrDefault(h => h.Id == id);
+            if (hobby == null) return NotFound();
+
+            return View(hobby);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> HobbyDetail(int? id,Hobby _hobby)
+        {
+            if (id == null) return NotFound();
+            Hobby hobby = await _db.Hobbies.FindAsync(id);
+            Hobby checkedHobby = _db.Hobbies.FirstOrDefault(h => h.Name.ToLower() == _hobby.Name.ToLower());
+
+            if (hobby.Id != checkedHobby.Id) 
+            {
+                ModelState.AddModelError(string.Empty, "This hobby is already exist");
+                return View();
+            }
+            if (hobby == null) return NotFound();
+
+            hobby.Name = _hobby.Name;
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Departments()
+        {
+            return View(_db.Departments);
+        }
+
+        public IActionResult CreateDep() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDep(Department department)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            if (_db.Departments.Any(d => d.Name.ToLower() == department.Name.ToLower())) 
+            {
+                ModelState.AddModelError(string.Empty, "This deparment is aready exist");
+                return View();
+            }
+
+            Department dep = new Department 
+            {
+                Abbreviation = department.Abbreviation,
+                Name = department.Name
+            };
+
+            _db.Departments.Add(dep);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult DepDetail(int? id)
+        {
+            if (id == null) return NotFound();
+            Department dep = _db.Departments.FirstOrDefault(h => h.Id == id);
+            if (dep == null) return NotFound();
+
+            return View(dep);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DepDetail(int? id, Department _dep)
+        {
+            if (id == null) return NotFound();
+            Department dep = await _db.Departments.FindAsync(id);
+            Department checkedDep = _db.Departments.FirstOrDefault(d => d.Name.ToLower() == _dep.Name.ToLower());
+
+            if (dep.Id != checkedDep.Id)
+            {
+                ModelState.AddModelError(string.Empty, "This hobby is already exist");
+                return View();
+            }
+            if (dep == null) return NotFound();
+
+            dep.Name = _dep.Name;
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> Search(string key)
+        {
+            if (key == null) key = "";
+            var teacher = _db.Teachers.ToList();
+
+            if (key.Length > 0 || key == "")
+            {
+                teacher = _db.Teachers.Where(c => c.Name.Contains(key)).ToList();
+            }
+            return PartialView("_TeacherSearch", teacher);
+        }
+        public async Task<IActionResult> SearchHobby(string clue)
+        {
+            if (clue == null) clue = "";
+            var hobby = _db.Hobbies.ToList();
+
+            if (clue.Length > 0 || clue == "")
+            {
+                hobby = _db.Hobbies.Where(c => c.Name.Contains(clue)).ToList();
+            }
+            return PartialView("_HobbySearch", hobby);
+        }
+        public async Task<IActionResult> SearchDepartments(string clue)
+        {
+            if (clue == null) clue = "";
+            var dep = _db.Departments.ToList();
+
+            if (clue.Length > 0 || clue == "")
+            {
+                dep = _db.Departments.Where(c => c.Name.Contains(clue)).ToList();
+            }
+            return PartialView("_DepSearch", dep);
         }
     }
 }

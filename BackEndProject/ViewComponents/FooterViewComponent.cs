@@ -27,5 +27,6 @@ namespace BackEndProject.ViewComponents
 
             return View(await Task.FromResult(footerVM));
         }
+
     }
 }

@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using BackEndProject.Areas.Admin.ViewModels;
 using BackEndProject.DAL;
 using BackEndProject.Extensions;
+using BackEndProject.Migrations;
 using BackEndProject.Models;
 using BackEndProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using static BackEndProject.Helpers.Helper;
@@ -257,6 +259,101 @@ namespace BackEndProject.Areas.Admin.Controllers
             _db.Events.Remove(_event);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Speakers() 
+        {
+            return View(_db.Speakers.OrderByDescending(s=>s.Id).ToList());
+        }
+
+        public IActionResult CreateSpeaker() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateSpeaker(Speaker _speaker)
+        {
+            if (!_speaker.Photo.isImage())
+            {
+                ModelState.AddModelError(string.Empty, "Chose photo type");
+                return View(_speaker);
+            }
+            Speaker speaker = new Speaker
+            {
+                Image =await _speaker.Photo.SaveImg(_env.WebRootPath, "img/event"),
+                Name = _speaker.Name,
+                Speciality = _speaker.Speciality
+            };
+
+            _db.Speakers.Add(speaker);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Speakers));
+        }
+
+        public async Task<IActionResult> EditSpeaker(int? id) 
+        {
+            if (id == null) return NotFound();
+            Speaker speaker = await _db.Speakers.FindAsync(id);
+            if (speaker == null) return NotFound();
+            SpeakerVM speakerVM = new SpeakerVM
+            {
+                Image = speaker.Image,
+                Name = speaker.Name,
+                Speciality = speaker.Speciality
+            };
+
+            return View(speakerVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditSpeaker(int? id,SpeakerVM speakerVM, IFormFile File)
+        {
+            if (id == null) return NotFound();
+            Speaker speaker = await _db.Speakers.FindAsync(id);
+            if (speaker == null) return NotFound();
+            speakerVM.Image = speaker.Image;
+            if (File != null) 
+            {
+                if (!File.isImage()) 
+                {
+                    ModelState.AddModelError(string.Empty, "Choose photo");
+                    return View(speakerVM);
+                }
+                Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/event", speaker.Image);
+                speaker.Image =await File.SaveImg(_env.WebRootPath, "img/event");
+            }
+
+            speaker.Name = speakerVM.Name;
+            speaker.Speciality = speakerVM.Speciality;
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Search(string key)
+        {
+            if (key == null) key = "";
+            var _event = _db.Events.OrderByDescending(p => p.Id).ToList();
+
+            if (key.Length > 0 || key == "")
+            {
+                _event = _db.Events.Where(c => c.Header.Contains(key)).OrderByDescending(p => p.Id).ToList();
+            }
+            return PartialView("_EventSearch", _event);
+        }
+
+        public async Task<IActionResult> SearchSpeakers(string clue)
+        {
+            if (clue == null) clue = "";
+            var speaker = _db.Speakers.OrderByDescending(p => p.Id).ToList();
+
+            if (clue.Length > 0 || clue == "")
+            {
+                speaker = _db.Speakers.Where(c => c.Name.Contains(clue)).OrderByDescending(p => p.Id).ToList();
+            }
+            return PartialView("_SpeakerSearch", speaker);
         }
     }
 }

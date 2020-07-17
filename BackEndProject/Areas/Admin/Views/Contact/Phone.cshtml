@@ -1,0 +1,118 @@
+﻿@model IEnumerable<CenterPhoneNumber>
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Data</h4>
+                <div class="row">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                        Create a new phone number
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input id="phone" class="form-control" />@Html.AntiForgeryToken()
+                                            <span class="text-danger" id="warning"></span>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" id="create">Create</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Phone Number
+                                </th>
+                                <th>
+                                    Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="body">
+                            @foreach (CenterPhoneNumber cpn in Model)
+                            {
+                                <tr>
+                                    <td class="py-1">
+                                        <p>@cpn.Phone</p>
+                                    </td>
+                                    <td>
+                                        <a asp-action="DeletePhone" name="@cpn.Id" asp-route-id="@cpn.Id" asp-controller="Contact" asp-area="Admin" class="btn btn-danger remove_button"><i class=" mdi mdi-delete-forever ">@Html.AntiForgeryToken()</i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_Validation" />
+
+    <script>
+
+        let input = document.getElementById('phone')
+        let button = document.getElementById('create')
+
+        button.onclick = function ()
+        {
+            if (input.value.trim() == "") {
+                $("#warning").text("This Field is required") ;
+            }
+            else
+            {
+                $.ajax({
+                    url: "/Admin/Contact/CreatePhone?key=" + input.value,
+                    type: "Get",
+                    success: function (response) {
+                        console.log(response)
+                        $("#body").append(response);
+                    }
+
+                })
+            }
+        }
+
+        let buttons = document.getElementsByClassName('remove_button')
+       
+        for (let remove in buttons) {
+            remove.onclick = function ()
+            {
+                console.log(this.tagName)
+                $.ajax({
+                    url: "/Admin/Contact/DeletePhone?key=" + this.tagName,
+                    type: "Get",
+                    success: function (response) {
+                        console.log(response)
+                        $("#body").append(response);
+                    }
+
+                })
+            }
+        }
+
+    </script>
+
+}
+

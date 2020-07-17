@@ -1,0 +1,100 @@
+﻿@model BackEndProject.Areas.Admin.ViewModels.SpeakerVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Edit Event</h4>
+                <img src="~/img/event/@Model.Image" alt="Alternate Text" />
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <form class="forms-sample" method="post" enctype="multipart/form-data" runat="Server">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="@Model.Name"></label>
+                                <input asp-for="@Model.Name" class="form-control" placeholder="Header">
+                                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="@Model.Speciality"></label>
+                                <input asp-for="@Model.Speciality" class="form-control" placeholder="Header">
+                                <span asp-validation-for="@Model.Speciality" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Photo</label>
+                                <input type="file" id="file" name="File" class="form-control" placeholder="Photo" accept="image/">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <a asp-action="Index" class="btn btn-dark">Go to Index</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{>
+    <partial name="_Validation" />;
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" language="javascript" type="text/javascript"><</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="~/admin/js/dist/multi.min.js"></script>
+    <script>
+        $('#speakers').multi({
+            non_selected_header: 'Speakers',
+            selected_header: 'Selected Speakers'
+        });
+        $('#speakers').multi({
+
+            // enable search
+            enable_search: true,
+
+            // placeholder of search input
+            search_placeholder: 'Search...'
+
+        });
+    </script>
+    <script>
+
+    //$("#submit_button").on("click", function () {
+    //    var form = $('#__AjaxAntiForgeryForm');
+    //    var token = $('input[name="__RequestVerificationToken"]', form).val();
+    //    var key = $("#speakers").val().toString();
+    //    console.log(key.toString())
+    //    $.ajax({
+    //        url: "/Admin/Event/Create",
+    //        //contentType: 'application/json',
+    //        data: {
+    //            __RequestVerificationToken: token,
+    //            someValue: 'key'
+    //        },
+    //        type: "Post",
+    //        success: function (response) { console.log("Okay") }
+    //    })
+    //})
+
+
+    </script>
+}
+
+

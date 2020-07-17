@@ -29,22 +29,22 @@
 
                     </div>
                     <div class="form-group">
-                        <label></label>
+                        <label asp-for="@Model.Content"></label>
                         <textarea asp-for="@Model.Content" id="editor1" required></textarea>
                         <span class="text-danger" asp-validation-for="@Model.Content" id="spaneditor1"></span>
                     </div>
                     <div class="form-group">
-                        <label></label>
+                        <label asp-for="@Model.AboutCourse"></label>
                         <textarea asp-for="@Model.AboutCourse" id="editor2"></textarea>
                         <span class="text-danger" asp-validation-for="@Model.AboutCourse" id="spaneditor2"></span>
                     </div>
                     <div class="form-group">
-                        <label></label>
+                        <label asp-for="@Model.HowToApply"></label>
                         <textarea asp-for="@Model.HowToApply" id="editor3"></textarea>
                         <span class="text-danger" asp-validation-for="@Model.HowToApply" id="spaneditor3"></span>
                     </div>
                     <div class="form-group">
-                        <label></label>
+                        <label asp-for="@Model.Certification"></label>
                         <textarea asp-for="@Model.Certification" id="editor4"></textarea>
                         <span class="text-danger" asp-validation-for="@Model.Certification" id="spaneditor4"></span>
                     </div>

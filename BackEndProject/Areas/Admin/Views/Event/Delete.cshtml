@@ -17,7 +17,7 @@
                             <li><span>Time Interval : </span>@Model.Event.Interval</li>
                             <li><span>Location : </span>@Model.Event.Location</li>
                         </ul>
-                        <p>@Model.Event.Content</p>
+                        <p>@Html.Raw(Model.Event.Content)</p>
                         <div class="speakers-area fix">
                             <h4>Speakers</h4>
                             <div class="row">

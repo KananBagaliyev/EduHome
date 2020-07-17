@@ -1,14 +1,49 @@
-﻿@{
-    Layout = "_AdminLayout";
- }
+﻿@model BackEndProject.Areas.Admin.ViewModels.ReplySubscriberVM
+
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style>
+        #circle {
+            width: 500px;
+            height: 500px;
+            -webkit-border-radius: 250px;
+            -moz-border-radius: 250px;
+            border-radius: 250px;
+            border: 15px solid black;
+            display: flex;
+            justify-content: center;
+            align-items:center
+        }
+        .circle {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-    <h2>Salam</h2>
+
+    <h1 style="font-size:80px">HI, @User.Identity.Name</h1>
+    @if (Model.Role == "Admin")
+    {
+        <div class="row mt-5">
+            <div class="col-md-6 circle">
+                <div id="circle">
+                    <h1>New Replies</h1>
+                    <h1 style="font-size:120px">@Model.Reply.Count()</h1>
+                </div>
+            </div>
+            <div class="col-md-6 circle">
+                <div id="circle">
+                    <h1 style="display:block!important">Subscribers</h1>
+                    <h1 style="font-size:120px">@Model.Subscriber.Count()</h1>
+                </div>
+            </div>
+        </div>
+    }
+
 </body>
 </html>

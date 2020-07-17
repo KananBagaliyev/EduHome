@@ -1,0 +1,49 @@
+﻿@model Reply
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.Name</td>
+                                    <td>@Model.Email</td>
+                                    <td>@Model.Subject</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6" style="border:1px solid black;">
+                        <h2>Message</h2>
+                        <p disabled>@Model.Message</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    @if (Model.Checked == true)
+                    {
+                        <a asp-action="Unread" asp-route-id="@Model.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as unread</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Read" asp-route-id="@Model.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as read</a>
+                    }
+                    <a asp-action="Index" asp-controller="Reply" asp-area="Admin" class="btn btn-dark ml-5">Go to Index</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

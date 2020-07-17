@@ -12,5 +12,10 @@ namespace BackEndProject.Models
         public int Id { get; set; }
         [Required, EmailAddress, DataType(DataType.EmailAddress)]
         public string Mail { get; set; }
+        public bool isActivated { get; set; }
+        public Subscriber()
+        {
+            isActivated = false;
+        }
     }
 }

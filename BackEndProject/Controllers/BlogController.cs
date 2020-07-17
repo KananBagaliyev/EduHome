@@ -57,5 +57,22 @@ namespace BackEndProject.Controllers
             }).Take(8);
             return PartialView("_BlogSearch", model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Detail(EventDetailVM detailVM)
+        {
+            Reply reply = new Reply
+            {
+                Name = detailVM.Reply.Name,
+                Email = detailVM.Reply.Email,
+                Subject = detailVM.Reply.Subject,
+                Message = detailVM.Reply.Message
+            };
+
+            _db.Replies.Add(reply);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Detail));
+        }
     }
 }

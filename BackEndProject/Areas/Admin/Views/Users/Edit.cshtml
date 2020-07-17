@@ -1,4 +1,4 @@
-﻿@model UserVM
+﻿@model BackEndProject.Areas.Admin.ViewModels.UserEditVM
 
 @{
     ViewData["Title"] = "Detail";
@@ -33,6 +33,13 @@
                         <label asp-for="Role"></label>
                         <input asp-for="Role" class="form-control" placeholder="Role" disabled>
                     </div>
+                    @if (ViewBag.ActiveRole == "Moderator")
+                    {
+                        <div class="form-group">
+                            <label asp-for="Course.Name"></label>
+                            <input asp-for="Course.Name" class="form-control" placeholder="Course" disabled>
+                        </div>
+                    }
                     <div class="row">
                         <h6>Select new role:</h6>
                     </div>
@@ -46,8 +53,22 @@
 
                                     <option value="@item">@item</option>
                                 }
-                             }
+                            }
                         </select>
+                        @if (ViewBag.ActiveRole == "Moderator")
+                        {
+                            <select name="courses" id="courses">
+                                <option value="@Model.Course.Name">@Model.Course.Name</option>
+                                @foreach (var item in Model.Courses)
+                                {
+                                    if (item.Id != Model.Course.Id)
+                                    {
+
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                        }
                     </div>
                     <input type="submit" class="btn btn-primary mr-2 mt-2" value="Edit" />
                     <a asp-action="Index" class="btn btn-dark mt-2">Go to Index</a>
@@ -58,5 +79,13 @@
 </div>
 @section Scripts{
     <partial name="_Validation" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('#roles').select2();
+            $('#courses').select2();
+        });
+    </script>
 }

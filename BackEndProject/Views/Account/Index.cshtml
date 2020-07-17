@@ -1,0 +1,52 @@
+﻿@model EditAccountVM 
+    <h1 style="font-size:50px;text-align:center">Personal Information</h1>
+    <div class="container">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <form class="pt-3" method="post">
+            <div class="form-group">
+                <label asp-for="Fullname" style="display:block;font-size:18px"></label>
+                <input disabled asp-for="Fullname" class="custom-input inputs" placeholder="Fullname">
+                <span asp-validation-for="Fullname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" style="display:block;font-size:18px"></label>
+                <input disabled asp-for="Username" class="custom-input inputs" placeholder="Username">
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" style="display:block;font-size:18px"></label>
+                <input disabled asp-for="Email" class="custom-input inputs" placeholder="Email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mt-3" style="display:none" id="hidden_submit">
+                <input type="submit" class="default-btn" value="Save Changes" />
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <a id="edit_button" class="default-btn" style="text-align:center;cursor:pointer">Edit</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+@section Scripts{
+    <partial name="_Validation"/>
+    <script>
+        let edit = document.getElementById('edit_button')
+        let submit = document.getElementById('hidden_submit')
+        let inputs = document.querySelectorAll('.inputs')
+        console.log(inputs)
+        edit.onclick = function ()
+        {
+            this.style.display = "none";
+            for (var i = 0; i < inputs.length;++i)
+            {
+                inputs[i].removeAttribute("disabled")
+            }
+            submit.style.display = "block"
+        }
+    </script>
+
+ }
+

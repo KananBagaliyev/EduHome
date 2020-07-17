@@ -184,6 +184,11 @@ namespace BackEndProject.Areas.Admin.Controllers
 
             if (File != null) 
             {
+                if (!File.isImage()) 
+                {
+                    ModelState.AddModelError(string.Empty, "Choose photo");
+                    return View(courseVM);
+                }
                 Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/course", course.Image);
                 course.Image = await File.SaveImg(_env.WebRootPath, "img/course");
             }
@@ -203,5 +208,24 @@ namespace BackEndProject.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Search(string key) 
+        {
+            if (key == null) key = "";
+            var model = _db.Courses.OrderByDescending(p=>p.Id).ToList();
+
+            if (key.Length > 0 || key == "")
+            {
+                 model = _db.Courses.Where(c => c.Name.Contains(key)).OrderByDescending(p => p.Id).ToList();
+            }
+            CourseUserVM userVM = new CourseUserVM 
+            {
+                Course = model,
+                User = await _userManager.FindByIdAsync(_userId),
+                Role = (await _userManager.GetRolesAsync(await _userManager.FindByIdAsync(_userId)))[0]
+            };
+            return PartialView("_CourseSearch",userVM);
+        }
+
     }
 }

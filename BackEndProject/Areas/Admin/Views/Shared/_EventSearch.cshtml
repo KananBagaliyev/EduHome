@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Event>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Event Image
+                </th>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Details
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Event _event in Model)
+            {
+                <tr>
+                    <td class="py-1">
+                        <img src="~/img/event/@_event.Image" alt="Course" style="width:150px !important; height:100px !important; border-radius:0; border:2px solid black" />
+                    </td>
+                    <td class="py-1">
+                        <p>@_event.Header.ToUpper()</p>
+                    </td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@_event.Id" asp-controller="Event" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
+                        <a asp-action="Edit" asp-route-id="@_event.Id" asp-controller="Event" asp-area="Admin" class="btn btn-warning"><i class="mdi mdi-table-edit "></i></a>
+                        <a asp-action="Delete" asp-route-id="@_event.Id" asp-controller="Event" asp-area="Admin" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

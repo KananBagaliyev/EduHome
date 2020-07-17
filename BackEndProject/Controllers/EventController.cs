@@ -53,6 +53,23 @@ namespace BackEndProject.Controllers
 
             return View(detailVM);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Detail(EventDetailVM detailVM) 
+        {
+            Reply reply = new Reply
+            {
+                Name = detailVM.Reply.Name,
+                Email = detailVM.Reply.Email,
+                Subject = detailVM.Reply.Subject,
+                Message = detailVM.Reply.Message
+            };
+
+            _db.Replies.Add(reply);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Detail));
+        }
         public IActionResult Search(string key)
         {
             var model = _db.Events.Where(b => b.Header.Contains(key)).Select(b => new Event

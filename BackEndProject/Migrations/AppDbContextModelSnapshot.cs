@@ -398,6 +398,31 @@ namespace BackEndProject.Migrations
                     b.ToTable("NoticeVideos");
                 });
 
+            modelBuilder.Entity("BackEndProject.Models.Reply", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Checked");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("Message")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Subject")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Replies");
+                });
+
             modelBuilder.Entity("BackEndProject.Models.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -487,6 +512,8 @@ namespace BackEndProject.Migrations
 
                     b.Property<string>("Mail")
                         .IsRequired();
+
+                    b.Property<bool>("isActivated");
 
                     b.HasKey("Id");
 

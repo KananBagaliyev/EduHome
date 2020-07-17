@@ -11,7 +11,7 @@
                     <div class="blog-details-content">
                         <h2>@Model.Header </h2>
                         <h6>By @Model.Publisher  / @Model.Date.ToString("MMM dd, yyyy", CultureInfo.InvariantCulture) </h6>
-                        <p>@Model.Content</p>
+                        <p>@Html.Raw(Model.Content)</p>
                     </div>
                 </div>
             </div>

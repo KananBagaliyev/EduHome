@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Reply>
+<table class="table ">
+    <thead>
+        <tr>
+            <th>
+                Fullname
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Reply reply in Model)
+        {
+            @if (reply.Checked == false)
+            {
+                <tr class="rows">
+                    <td class="py-1">
+                        <p>@reply.Name.ToUpper()*</p>
+                    </td>
+                    <td class="py-1">
+                        <p>@reply.Email.ToLower()</p>
+                    </td>
+                    <td class="py-1">
+                        @if (reply.Subject.Length > 20)
+                        {
+                            <p>@reply.Subject.ToLower().Substring(0, 20)</p>
+                        }
+                        else
+                        {
+                            <p>@reply.Subject.ToLower()</p>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
+                        <a asp-action="Answer" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Answer</a>
+                        <a asp-action="Read" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as read</a>
+                        <a id="delete_one" value="@reply.Id" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr class="rows" style="background-color:#d7d0d0">
+                    <td class="py-1">
+                        <p>@reply.Name.ToUpper()</p>
+                    </td>
+                    <td class="py-1">
+                        <p>@reply.Email.ToLower()</p>
+                    </td>
+                    <td class="py-1">
+                        @if (reply.Subject.Length > 20)
+                        {
+                            <p>@reply.Subject.ToLower().Substring(0, 20)</p>
+                        }
+                        else
+                        {
+                            <p>@reply.Subject.ToLower()</p>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-success"><i class=" mdi mdi-details "></i></a>
+                        <a asp-action="Answer" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Answer</a>
+                        <a asp-action="Unread" asp-route-id="@reply.Id" asp-controller="Reply" asp-area="Admin" class="btn btn-warning">Mark as unread</a>
+                        <a id="delete_one" value="@reply.Id" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

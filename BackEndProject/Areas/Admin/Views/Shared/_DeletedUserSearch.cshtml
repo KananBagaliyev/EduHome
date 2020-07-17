@@ -1,0 +1,43 @@
+﻿@model IEnumerable<UserVM>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Fullname
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (UserVM user in Model)
+        {
+            if (user.Username != User.Identity.Name)
+            {
+                <tr>
+                    <td class="py-1">
+                        <p>@user.Fullname.ToUpper()</p>
+                    </td>
+                    <td class="py-1">
+                        <p>@user.Username.ToLower()</p>
+                    </td>
+                    <td class="py-1">
+                        <p>@user.Role.ToLower()</p>
+                    </td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@user.Id" asp-controller="Users" asp-area="Admin" class="btn btn-warning"><i class=" mdi mdi-details "></i></a>
+                        <a asp-action="Activate" asp-route-id="@user.Id" asp-controller="Users" asp-area="Admin" class="btn btn-success"><i class="  mdi mdi-account-check  "></i></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

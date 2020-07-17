@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using BackEndProject.DAL;
+using BackEndProject.Models;
 using BackEndProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,5 +36,7 @@ namespace BackEndProject.Controllers
             };
             return View(homeVM);
         }
+
+        
     }
 }

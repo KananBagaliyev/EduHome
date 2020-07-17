@@ -13,7 +13,7 @@
                     <h2>@Model.Teacher.Name</h2>
                     <h5>@Model.AboutTeacher.Speciality</h5>
                     <h4>About me</h4>
-                    <p>@Model.AboutTeacher.About</p>
+                    <p>@Html.Raw(Model.AboutTeacher.About)</p>
                     <ul>
                         <li><span>Degree: </span>@Model.AboutTeacher.Degree</li>
                         <li><span>Experience: </span>@Model.AboutTeacher.Experience years experience</li>

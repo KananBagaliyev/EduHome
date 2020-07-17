@@ -1,0 +1,10 @@
+﻿@model CenterPhoneNumber
+
+            <tr>
+                <td class="py-1">
+                    <p>@Model.Phone</p>
+                </td>
+                <td>
+                    <a asp-action="DeletePhone" asp-route-id="@Model.Id" asp-controller="Contact" asp-area="Admin" class="btn btn-danger"><i class=" mdi mdi-delete-forever "></i></a>
+                </td>
+            </tr>

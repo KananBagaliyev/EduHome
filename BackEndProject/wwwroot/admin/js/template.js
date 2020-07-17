@@ -79,4 +79,36 @@
     //        }
     //    })
     //})
+
+    $("#search_input").on('keyup', function () {
+        let pathx = window.location.pathname;
+        let path = pathx.split('/');
+        let controller = path[2];
+        let action = path[3];
+        if (action == undefined) {
+            console.log("/Admin/" + controller + "/Search?key=" + $(this).val().trim())
+            $.ajax({
+                url: "/Admin/" + controller + "/Search?key=" + $(this).val().trim(),
+                type: "Get",
+                success: function (responsex) {
+                    //$("table").css({ "display": "none" })
+                    $(".table-responsive").empty();
+                    $(".table-responsive").append(responsex)
+                }
+            })
+        }
+        else
+        {
+            $.ajax({
+                url: "/Admin/" + controller + "/Search" + action + "?clue=" + $(this).val().trim(),
+                type: "Get",
+                success: function (response) {
+                    $(".table-responsive").empty();
+                    $(".table-responsive").append(response)
+                }
+            })
+        }
+    })
+
+
 })(jQuery);

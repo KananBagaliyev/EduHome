@@ -46,7 +46,13 @@ namespace BackEndProject.Areas.Admin.Controllers
             AboutUs about = await _db.AboutUs.FindAsync(id);
             if (about == null) return NotFound();
             if (File != null) {
-                about.Image = await File.SaveImg(_env.WebRootPath,"img/about");
+                if (!File.isImage()) 
+                {
+                    ModelState.AddModelError(string.Empty, "Choose photo");
+                    return View(_about);
+                }
+                Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/about", about.Image);
+                about.Image = await File.SaveImg(_env.WebRootPath, "img/about");
             }
             about.Header = _about.Header;
             about.Content = _about.Content;

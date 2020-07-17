@@ -30,6 +30,7 @@ namespace BackEndProject.DAL
         public DbSet<Hobby> Hobbies { get; set; }
         public DbSet<NoticeBoard> NoticeBoards { get; set; }
         public DbSet<NoticeVideo> NoticeVideos { get; set; }
+        public DbSet<Reply> Replies { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Slider> Sliders { get; set; }

@@ -1,4 +1,5 @@
-﻿<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+﻿@model BackEndProject.Areas.Admin.ViewModels.ReplySubscriberVM
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
             <a class="navbar-brand brand-logo" asp-area="Admin" asp-controller="Dashboard" asp-action="Index"><img src="images/logo.svg" alt="logo" /></a>
@@ -9,134 +10,174 @@
         </div>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <ul class="navbar-nav mr-lg-4 w-100">
-            <li class="nav-item nav-search d-none d-lg-block w-100">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="search">
-                            <i class="mdi mdi-magnify"></i>
-                        </span>
+        @{string controller = @ViewContext.RouteData.Values["controller"].ToString();}
+        @{string action = @ViewContext.RouteData.Values["action"].ToString();}
+        @if (controller == "Blog" && action == "Index" || controller == "Course" && action == "Index" || controller == "Event" && action=="Index" || controller == "Event" && action == "Speakers" || controller == "Teacher" && action =="Index" || controller == "Teacher" && action == "Hobby" || controller == "Teacher" &&  action == "Departments" ||  controller == "Users" && action == "Index" || controller == "Users" && action == "DeletedUser" || controller == "Reply" && action == "Index" || controller == "Subscriber"  && action == "Index"    )
+        {
+            <ul class="navbar-nav mr-lg-4 w-100">
+                <li class="nav-item nav-search d-none d-lg-block w-100">
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="search">
+                                <i class="mdi mdi-magnify"></i>
+                            </span>
+                        </div>
+                        <input type="text" id="search_input" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
                     </div>
-                    <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
-                </div>
-            </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
+
+                </li>
+            </ul>
+        }
+    <ul class="navbar-nav navbar-nav-right">
+        @if ((string)TempData["User"] == "Admin")
+        {
             <li class="nav-item dropdown mr-1">
-                <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-                    <i class="mdi mdi-message-text mx-0"></i>
-                    <span class="count"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="item-content flex-grow">
-                            <h6 class="ellipsis font-weight-normal">
-                                David Grey
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                The meeting is cancelled
-                            </p>
-                        </div>
+                @if (Model.Reply.Any(r => r.Checked == false) == true)
+                {
+                    <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+                        <i class="mdi mdi-message-text mx-0"></i>
+                        <span class="count"></span>
                     </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="item-content flex-grow">
-                            <h6 class="ellipsis font-weight-normal">
-                                Tim Cook
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                New product launch
-                            </p>
-                        </div>
+                }
+                else
+                {
+                    <a style="font-size:25px" class="nav-link  dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+                        <i class="mdi mdi-message-text mx-0"></i>
+                        <span class="count"></span>
                     </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="item-content flex-grow">
-                            <h6 class="ellipsis font-weight-normal">
-                                Johnson
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                Upcoming board meeting
-                            </p>
-                        </div>
-                    </a>
+                }
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" style="width:205px" aria-labelledby="messageDropdown">
+                    <p class="mb-0 font-weight-normal float-left dropdown-header">Replies</p>
+                    @if (Model.Reply.Count() > 0)
+                    {
+                        @foreach (var item in Model.Reply)
+                        {
+                            if (item.Checked == false)
+                            {
+                                <a asp-action="Detail" asp-controller="Reply" asp-route-id="@item.Id" class="dropdown-item">
+                                    <div class="item-content flex-grow">
+                                        <h6 style="font-weight:700!important;" class="ellipsis font-weight-normal">
+                                            @item.Name
+                                        </h6>
+                                        <p class="font-weight-light small-text text-muted mb-0">
+                                            @item.Subject
+                                        </p>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-action="Detail" asp-controller="Reply" asp-route-id="@item.Id" class="dropdown-item">
+                                    <div class="item-content flex-grow">
+                                        <h6 style="font-weight:bold;" class="ellipsis font-weight-normal">
+                                            @item.Name
+                                        </h6>
+                                        <p class="font-weight-light small-text text-muted mb-0">
+                                            @item.Subject
+                                        </p>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <a class="dropdown-item">
+                            <div class="item-content flex-grow">
+                                <h6 style="font-weight:bold;" class="ellipsis font-weight-normal">
+                                    Your Inbox is Empty
+                                </h6>
+                            </div>
+                        </a>
+                    }
+
+                    <a asp-action="Index" asp-controller="Reply" class="btn btn-primary" style="position:relative; left:20%; color:white">Go to Inbox</a>
                 </div>
             </li>
             <li class="nav-item dropdown mr-4">
-                <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
-                    <i class="mdi mdi-bell mx-0"></i>
-                    <span class="count"></span>
-                </a>
+                @if (Model.Subscriber.Any(s => s.isActivated == false) == true)
+                {
+                    <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <i class="mdi mdi-bell mx-0"></i>
+                        <span class="count"></span>
+                    </a>
+                }
+                else
+                {
+                    <a style="font-size:25px" class="nav-link dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
+                        <i class="mdi mdi-bell mx-0"></i>
+                        <span class="count"></span>
+                    </a>
+                }
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <div class="item-icon bg-success">
-                                <i class="mdi mdi-information mx-0"></i>
+                    <p class="mb-0 font-weight-normal float-left dropdown-header">Subscribers</p>
+                    @if (Model.Subscriber.Count() > 0)
+                    {
+                        @foreach (var item in Model.Subscriber)
+                        {
+                            if (item.isActivated == false)
+                            {
+                                <a class="dropdown-item">
+                                    <div class="item-thumbnail">
+                                        <div class="item-icon bg-info">
+                                            <i class="mdi mdi-account-box mx-0"></i>
+                                        </div>
+                                    </div>
+                                    <div class="item-content">
+                                        <h6 style="font-size:700px">@item.Mail.ToLower()</h6>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-action="Index" asp-controller="Subscriber" class="dropdown-item">
+                                    <div class="item-thumbnail">
+                                        <div class="item-icon bg-info">
+                                            <i class="mdi mdi-account-box mx-0"></i>
+                                        </div>
+                                    </div>
+                                    <div class="item-content">
+                                        <h6 class="font-weight-normal">@item.Mail.ToLower()</h6>
+                                    </div>
+                                </a>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <a asp-action="Index" asp-controller="Subscriber" class="dropdown-item">
+                            <div class="item-content flex-grow">
+                                <h6 style="font-weight:bold;" class="ellipsis font-weight-normal">
+                                    Your Subscriber list is Empty
+                                </h6>
                             </div>
-                        </div>
-                        <div class="item-content">
-                            <h6 class="font-weight-normal">Application Error</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                Just now
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <div class="item-icon bg-warning">
-                                <i class="mdi mdi-settings mx-0"></i>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h6 class="font-weight-normal">Settings</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                Private message
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <div class="item-icon bg-info">
-                                <i class="mdi mdi-account-box mx-0"></i>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h6 class="font-weight-normal">New user registration</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                2 days ago
-                            </p>
-                        </div>
-                    </a>
+                        </a>
+                    }
+
+                    <a asp-action="Index" asp-controller="Subscriber" class="btn btn-primary" style="position:relative; left:20%; color:white">Go to Subscribers</a>
                 </div>
             </li>
-            <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="images/faces/face5.jpg" alt="profile" />
-                    <span class="nav-profile-name">@ViewBag.Fullname</span>
+        }
+
+        <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                <span class="nav-profile-name">@ViewBag.Fullname</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a href="/Account/Index" class="dropdown-item">
+                    <i class="mdi mdi-settings text-primary"></i>
+                    Settings
                 </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item">
-                        <i class="mdi mdi-settings text-primary"></i>
-                        Settings
-                    </a>
-                    <a class="dropdown-item" asp-action="Logout" asp-controller="Users">
-                        <i class="mdi mdi-logout text-primary"></i>
-                        Logout
-                    </a>
-                </div>
-            </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-        </button>
-    </div>
+                <a class="dropdown-item" asp-action="Logout" asp-controller="Users">
+                    <i class="mdi mdi-logout text-primary"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
+    </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
 </nav>

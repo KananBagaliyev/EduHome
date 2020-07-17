@@ -160,6 +160,7 @@
                             <option value="@item.Id">@item.Abbreviation / @item.Name</option>
                         }
                     </select>
+                    
                     <h5 class="mt-5">Choose Hobbies</h5>
                     <select name="hobbies" id="hobbies" multiple>
                         @foreach (var item in Model.Hobbies)
@@ -188,18 +189,19 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" language="javascript" type="text/javascript"><</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
                 .catch(error => {
                     console.error(error);
                 });
-        if ($('.text-editor')) {
-            $('.text-editor').ckeditor();
-            $('input[type=submit]').bind('click', function () {
-                $('.text-editor').ckeditorGet().updateElement();
-            });
-        }
+
+    $(document).ready(function () {
+        $('#department').select2();
+    });
     </script>
 
     <script src="~/admin/js/dist/multi.min.js"></script>

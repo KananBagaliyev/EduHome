@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Speaker>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Image
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Speciality
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Speaker speaker in Model)
+        {
+
+            <tr class="rows">
+                <td class="py-1">
+                    <img src="~/img/event/@speaker.Image" alt="Alternate Text" style="width:120px !important; height:100px !important; border-radius:0; border:2px solid black" />
+                </td>
+                <td class="py-1">
+                    <p>@speaker.Name</p>
+                </td>
+                <td class="py-1">
+                    <p>@speaker.Speciality</p>
+                </td>
+                <td>
+                    <a asp-action="EditSpeaker" asp-route-id="@speaker.Id" asp-controller="Users" asp-area="Admin" class="btn btn-warning"><i class="mdi mdi-table-edit "></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

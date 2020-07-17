@@ -38,6 +38,8 @@
     <Compile Remove="Migrations\20200705144603_UpdatedSpeaker.Designer.cs" />
     <Compile Remove="Migrations\20200711095315_updatedUserCourse.cs" />
     <Compile Remove="Migrations\20200711095315_updatedUserCourse.Designer.cs" />
+    <Compile Remove="Migrations\20200716101528_Reply.cs" />
+    <Compile Remove="Migrations\20200716101528_Reply.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

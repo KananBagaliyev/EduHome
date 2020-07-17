@@ -21889,5 +21889,7 @@ dl li {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-
+.row-color {
+    background-color: #c2dbff !important;
+}
 /*# sourceMappingURL=maps/style.css.map */

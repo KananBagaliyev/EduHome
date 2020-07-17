@@ -38,6 +38,12 @@ namespace BackEndProject.Areas.Admin.Controllers
         [ActionName("Create")]
         public async Task<IActionResult> CreateTestimonial(Models.Testimonial _testimonial)
         {
+
+            if (!_testimonial.Photo.isImage())
+            {
+                ModelState.AddModelError(string.Empty, "Chose Photo");
+                return View(_testimonial);
+            }
             Models.Testimonial testimonial = new Models.Testimonial
             {
                 Name = _testimonial.Name,
@@ -45,6 +51,7 @@ namespace BackEndProject.Areas.Admin.Controllers
                 Description = _testimonial.Description,
                 Image = await _testimonial.Photo.SaveImg(_env.WebRootPath,"img/testimonial")
             };
+
 
             _db.Testimonials.Add(testimonial);
             await _db.SaveChangesAsync();
@@ -81,6 +88,11 @@ namespace BackEndProject.Areas.Admin.Controllers
 
             if (File != null) 
             {
+                if (!File.isImage()) 
+                {
+                    ModelState.AddModelError(string.Empty, "Chose Photo");
+                    return View(_testimonial);
+                }
                 Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/testimonial", testimonial.Image);
                 testimonial.Image = await File.SaveImg(_env.WebRootPath, "img/testimonial");
             }

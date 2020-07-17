@@ -1,4 +1,4 @@
-﻿@model UserVM
+﻿@model BackEndProject.Areas.Admin.ViewModels.UserEditVM
 @{
     ViewData["Title"] = "Detail";
     Layout = "_AdminLayout";
@@ -27,6 +27,13 @@
                         <th>Role:</th>
                         <td>@Model.Role</td>
                     </tr>
+                    @if (Model.Role == "Moderator")
+                    {
+                        <tr>
+                            <th>Course:</th>
+                            <td>@Model.Course.Name</td>
+                        </tr>
+                    }
                 </table>
 
             </div>

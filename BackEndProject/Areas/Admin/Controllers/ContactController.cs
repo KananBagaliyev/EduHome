@@ -69,7 +69,8 @@ namespace BackEndProject.Areas.Admin.Controllers
             if (id == null) return NotFound();
             Data data = await _db.Data.FindAsync(id);
             if (data == null) return NotFound();
-
+            _contactVM.Numbers = _db.CenterPhoneNumbers.Where(p => p.DataId == data.Id);
+            _contactVM.AllNumbers = _db.CenterPhoneNumbers.ToList();
             //ContactVM contactVM = new ContactVM
             //{
             //    Data = data,
@@ -97,6 +98,11 @@ namespace BackEndProject.Areas.Admin.Controllers
             }
             if (File != null) 
             {
+                if (!File.isImage()) 
+                {
+                    ModelState.AddModelError(string.Empty, "Choose Photo");
+                    return View(_contactVM);
+                }
                 Helpers.Helper.DeleteIMG(_env.WebRootPath, "img/logo", data.Logo);
                 data.Logo = await File.SaveImg(_env.WebRootPath, "img/logo");
             }
@@ -127,6 +133,43 @@ namespace BackEndProject.Areas.Admin.Controllers
 
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Phone() 
+        {
+            return View(_db.CenterPhoneNumbers.ToList());
+        }
+
+
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreatePhone(string key) 
+        {
+            if (key == null) return NotFound();
+            CenterPhoneNumber cpn = new CenterPhoneNumber()
+            {
+                Phone = key
+            };
+
+            _db.CenterPhoneNumbers.Add(cpn);
+            await _db.SaveChangesAsync();
+            return PartialView("_PhonePartial",cpn);
+        }
+
+        
+        public async Task<IActionResult> DeletePhone(string key,int? id) 
+        {
+            //int idx = Int32.Parse(key);
+            CenterPhoneNumber cpn = await _db.CenterPhoneNumbers.FindAsync(id);
+            if (cpn == null) return NotFound();
+
+            if (cpn.DataId != null) 
+            {
+                cpn.DataId = null;
+            }
+
+            _db.CenterPhoneNumbers.Remove(cpn);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Phone));
         }
     }
 }
