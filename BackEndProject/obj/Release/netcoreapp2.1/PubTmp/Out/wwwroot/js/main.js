@@ -126,5 +126,24 @@ $(".notice-left").niceScroll({
             autohidemode: false,
             
 });
+    
 
 })(jQuery);	
+let controller = $('#ctrl').val();
+$('.search-field').keyup(function () {
+    let field = $(this);
+    let key = field.val();
+    if (key == "") {
+        field.next().empty();
+    }
+    if (key.length > 0) {
+        $.ajax({
+            url: "/"+controller+"/Search?key=" + key,
+            type: "Get",
+            success: function (response) {
+                field.next().empty();
+                field.next().append(response);
+            }
+        })
+    }
+});

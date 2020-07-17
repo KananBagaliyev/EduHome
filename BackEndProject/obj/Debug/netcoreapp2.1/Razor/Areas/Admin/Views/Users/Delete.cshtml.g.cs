@@ -147,12 +147,12 @@ using System.Globalization;
             WriteLiteral("                </table>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n</div>\r\n<div class=\"row ml-2\">\r\n\r\n    <h6 class=\"text-danger\">Are you sure? This process is unrecoverable</h6>\r\n</div>\r\n<div class=\"row ml-2\">\r\n    ");
             EndContext();
             BeginContext(1430, 197, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a1b719599fd41f290d5ca15dfd47708", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5985753288f42fd8072d9293a9b2f7b", async() => {
                 BeginContext(1471, 85, true);
                 WriteLiteral("\r\n        <button type=\"submit\" class=\"btn btn-danger mr-2\">Delete</button>\r\n        ");
                 EndContext();
                 BeginContext(1556, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b8a66afd8d048418faac0f32eed473e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c761762321a140e9bda9fd632d3528aa", async() => {
                     BeginContext(1599, 11, true);
                     WriteLiteral("Go to Index");
                     EndContext();

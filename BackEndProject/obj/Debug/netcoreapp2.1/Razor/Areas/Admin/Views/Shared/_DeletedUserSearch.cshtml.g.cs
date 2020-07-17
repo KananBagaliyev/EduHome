@@ -124,7 +124,7 @@ using System.Globalization;
             WriteLiteral("</p>\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(941, 148, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a6137544e9340ccaf7d4c22e44585c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9aa9147821d94a5d8d27f43d64aaaf07", async() => {
                 BeginContext(1052, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();
@@ -164,7 +164,7 @@ using System.Globalization;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1115, 158, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6840d6100be4d99bf069781fe91df31", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321a89c882b47eca864fcf01da00b11", async() => {
                 BeginContext(1228, 41, true);
                 WriteLiteral("<i class=\"  mdi mdi-account-check  \"></i>");
                 EndContext();

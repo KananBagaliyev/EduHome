@@ -71,7 +71,7 @@ using System.Globalization;
             WriteLiteral("<div class=\"row\">\r\n    <div class=\"col-lg-12 grid-margin stretch-card\">\r\n        <div class=\"card\">\r\n            <div class=\"card-body\">\r\n                <h4 class=\"card-title\">Teacher List</h4>\r\n                <div class=\"col-12\">\r\n                    ");
             EndContext();
             BeginContext(318, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7306fd5718044e6a94451a23b4599022", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aeba81dc3958482ca4ed61cbca5f6081", async() => {
                 BeginContext(403, 11, true);
                 WriteLiteral("Go to Index");
                 EndContext();
@@ -98,7 +98,7 @@ using System.Globalization;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(440, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "858db1d7af4542d0a19389a60b9ff50d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cd341a7d573c44079e1eca1de6f0c332", async() => {
                 BeginContext(534, 18, true);
                 WriteLiteral("Create a new hobby");
                 EndContext();
@@ -152,7 +152,7 @@ using System.Globalization;
             WriteLiteral("</p>\r\n                                    </td>\r\n                                    <td>\r\n                                        ");
             EndContext();
             BeginContext(1234, 156, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78f3cbd6080d497eb695219501b102ee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3fb3d58180d546fc9cf01a2f4e4aa595", async() => {
                 BeginContext(1353, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();

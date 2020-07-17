@@ -140,7 +140,7 @@ using System.Globalization;
             WriteLiteral("</p>\r\n                                    </td>\r\n                                    <td>\r\n                                        ");
             EndContext();
             BeginContext(3129, 213, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69fa1f8c6cff465db8edbc98f9ce7d78", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d1861d31d19460696274f11c6af904b", async() => {
                 BeginContext(3274, 36, true);
                 WriteLiteral("<i class=\" mdi mdi-delete-forever \">");
                 EndContext();
@@ -209,7 +209,7 @@ AddHtmlAttributeValue("", 3163, cpn.Id, 3163, 7, false);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(3626, 30, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3b3811347e424d9aa2221423b46dfebb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c0b0bdeba11a4b42a5f716543145ace0", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

@@ -76,7 +76,7 @@ using System.Globalization;
                     ");
             EndContext();
             BeginContext(307, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c554411f94234c829e25c6233eb91c9b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4aad48dface64891b8da030e819074e1", async() => {
                 BeginContext(400, 13, true);
                 WriteLiteral("Phone numbers");
                 EndContext();
@@ -123,7 +123,7 @@ using System.Globalization;
                                     ");
             EndContext();
             BeginContext(1201, 121, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b805b9e1088f44bd837351190ba493fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7ba04530be454915ad874f3a7611dcca", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -160,7 +160,7 @@ AddHtmlAttributeValue("", 1222, Model.Logo, 1222, 11, false);
             WriteLiteral("</p>\r\n                                </td>\r\n                                <td>\r\n                                    ");
             EndContext();
             BeginContext(1587, 151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "503034b55ba64c4d864eb651d5ae63d9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f38edb27cb5b49cf9c11ef5b99291ce4", async() => {
                 BeginContext(1701, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();
@@ -200,7 +200,7 @@ AddHtmlAttributeValue("", 1222, Model.Logo, 1222, 11, false);
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(1776, 151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7d897b4b0c2469ab2fa102d15d0a2fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61fcba6c211446038052c177c2b78256", async() => {
                 BeginContext(1888, 35, true);
                 WriteLiteral("<i class=\"mdi mdi-table-edit \"></i>");
                 EndContext();

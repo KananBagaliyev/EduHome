@@ -140,7 +140,7 @@ using System.Globalization;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(1429, 130, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bcc7d0c2721b4e5ba7f0a43d6ac41700", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63f2385013424780a15c8c334b6f35e1", async() => {
                 BeginContext(1541, 14, true);
                 WriteLiteral("Mark as unread");
                 EndContext();
@@ -190,7 +190,7 @@ using System.Globalization;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(1657, 126, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d6bcf546583467782da4bee8bf1d80d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee22957bdd574d979ab5294665777b75", async() => {
                 BeginContext(1767, 12, true);
                 WriteLiteral("Mark as read");
                 EndContext();
@@ -238,7 +238,7 @@ using System.Globalization;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(1828, 103, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2296a8805dd74a55a521630b497f2ae5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "90501324cd5f4976b1786a61efb3de81", async() => {
                 BeginContext(1916, 11, true);
                 WriteLiteral("Go to Index");
                 EndContext();

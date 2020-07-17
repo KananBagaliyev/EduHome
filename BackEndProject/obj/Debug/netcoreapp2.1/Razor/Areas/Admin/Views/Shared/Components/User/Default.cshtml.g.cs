@@ -73,7 +73,7 @@ using System.Globalization;
             ");
             EndContext();
             BeginContext(321, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d773f0e33f44c3293d99cf968dd7b2b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d622b17abab4f788ff2b87f01c8c4f5", async() => {
                 BeginContext(419, 40, true);
                 WriteLiteral("<img src=\"images/logo.svg\" alt=\"logo\" />");
                 EndContext();
@@ -217,7 +217,7 @@ using System.Globalization;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(3791, 671, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "128d3deb42d74f3ca6f5b25c79444e8d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54a0be3aca9c46b69322a152430c9840", async() => {
                 BeginContext(3883, 237, true);
                 WriteLiteral("\r\n                                    <div class=\"item-content flex-grow\">\r\n                                        <h6 style=\"font-weight:700!important;\" class=\"ellipsis font-weight-normal\">\r\n                                            ");
                 EndContext();
@@ -285,7 +285,7 @@ using System.Globalization;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(4592, 662, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f72cd0e40f914324a639c106d885b7c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1be7703514dd456faf715ab5d7770376", async() => {
                 BeginContext(4684, 228, true);
                 WriteLiteral("\r\n                                    <div class=\"item-content flex-grow\">\r\n                                        <h6 style=\"font-weight:bold;\" class=\"ellipsis font-weight-normal\">\r\n                                            ");
                 EndContext();
@@ -375,7 +375,7 @@ using System.Globalization;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(5810, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5dc9956f74574a9182108144f41226a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7dbb202b466461b88555c3565871e49", async() => {
                 BeginContext(5928, 11, true);
                 WriteLiteral("Go to Inbox");
                 EndContext();
@@ -481,7 +481,7 @@ using System.Globalization;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(8131, 633, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03e67367d0264f2db50538d18d53439c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c166a9377e64ce686ad25ad3a347cd0", async() => {
                 BeginContext(8203, 454, true);
                 WriteLiteral(@"
                                     <div class=""item-thumbnail"">
@@ -540,7 +540,7 @@ using System.Globalization;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(8920, 410, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df8606574cad4e288c8bbb59c6bd907b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cdab6680f06f4d84838ffc50b1f9462c", async() => {
                 BeginContext(8992, 334, true);
                 WriteLiteral(@"
                             <div class=""item-content flex-grow"">
@@ -579,7 +579,7 @@ using System.Globalization;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(9377, 144, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "561207fc7ceb42c4b2c77c3b08d5c9c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07f99cbc024648d2bb94608326bb0744", async() => {
                 BeginContext(9500, 17, true);
                 WriteLiteral("Go to Subscribers");
                 EndContext();
@@ -630,7 +630,7 @@ using System.Globalization;
                 ");
             EndContext();
             BeginContext(10136, 183, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50d68fd94e6a47d0b124f58909e0346d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f1aa32fc3c445c3b742ee1f448c104d", async() => {
                 BeginContext(10204, 111, true);
                 WriteLiteral("\r\n                    <i class=\"mdi mdi-logout text-primary\"></i>\r\n                    Logout\r\n                ");
                 EndContext();

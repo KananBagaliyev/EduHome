@@ -72,7 +72,7 @@ using System.Globalization;
             WriteLiteral("</p>\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(187, 162, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25fd971b740e402bb470fe637dd416d8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2cebee41b0844bfb88b1ffbde31135f8", async() => {
                 BeginContext(305, 40, true);
                 WriteLiteral("<i class=\" mdi mdi-delete-forever \"></i>");
                 EndContext();

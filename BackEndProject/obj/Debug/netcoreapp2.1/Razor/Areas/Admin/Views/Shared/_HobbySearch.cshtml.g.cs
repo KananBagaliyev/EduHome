@@ -81,7 +81,7 @@ using System.Globalization;
             WriteLiteral("</p>\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(328, 156, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20fb95ff724d4533861a5500f4ccb7e0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "054f901641f24d95b1bcab48f248e3ff", async() => {
                 BeginContext(447, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();

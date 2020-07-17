@@ -206,7 +206,7 @@ WriteAttributeValue("", 2069, reply.Id, 2069, 9, false);
             WriteLiteral("                                            </td>\r\n                                            <td>\r\n                                                ");
             EndContext();
             BeginContext(3259, 149, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb0d4e2007ea403087d41efcfb91c01f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0b476543c3b4b61895d508c4a5d9780", async() => {
                 BeginContext(3371, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();
@@ -246,7 +246,7 @@ WriteAttributeValue("", 2069, reply.Id, 2069, 9, false);
             WriteLiteral("\r\n                                                ");
             EndContext();
             BeginContext(3458, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80fba98b2b1e451681b609ee860ba5e7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e285ecf12d0d4420ba3d00f6e5f2d5b4", async() => {
                 BeginContext(3570, 6, true);
                 WriteLiteral("Answer");
                 EndContext();
@@ -286,7 +286,7 @@ WriteAttributeValue("", 2069, reply.Id, 2069, 9, false);
             WriteLiteral("\r\n                                                ");
             EndContext();
             BeginContext(3630, 126, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "39bd81b964924739aba4e7ee473a2a4d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70ba3d2722ba48798cfc2d5097f1660e", async() => {
                 BeginContext(3740, 12, true);
                 WriteLiteral("Mark as read");
                 EndContext();
@@ -423,7 +423,7 @@ WriteAttributeValue("", 4379, reply.Id, 4379, 9, false);
             WriteLiteral("                                            </td>\r\n                                            <td>\r\n                                                ");
             EndContext();
             BeginContext(5568, 149, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40739cd70be24d06ae12c54331a9840a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "379fc02717824b1581336d48eaf45f2b", async() => {
                 BeginContext(5680, 33, true);
                 WriteLiteral("<i class=\" mdi mdi-details \"></i>");
                 EndContext();
@@ -463,7 +463,7 @@ WriteAttributeValue("", 4379, reply.Id, 4379, 9, false);
             WriteLiteral("\r\n                                                ");
             EndContext();
             BeginContext(5767, 122, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a876c50d6a744d0a244b35429b5ba4f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a375a9c41ac349ea9a024032f1ec2695", async() => {
                 BeginContext(5879, 6, true);
                 WriteLiteral("Answer");
                 EndContext();
@@ -503,7 +503,7 @@ WriteAttributeValue("", 4379, reply.Id, 4379, 9, false);
             WriteLiteral("\r\n                                                ");
             EndContext();
             BeginContext(5939, 130, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eec889cd52164429a2ed75ad937f65dc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82c940ad5c6b4fd697e4eab5de9f42d8", async() => {
                 BeginContext(6051, 14, true);
                 WriteLiteral("Mark as unread");
                 EndContext();
